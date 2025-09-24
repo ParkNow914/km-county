@@ -10,17 +10,23 @@ echo.
 
 set FOUND_SDK=
 
-REM Verificar localizacoes comuns
-set COMMON_PATHS[0]=%USERPROFILE%\AppData\Local\Android\Sdk
-set COMMON_PATHS[1]=%LOCALAPPDATA%\Android\Sdk
-set COMMON_PATHS[2]=C:\Android\Sdk
-set COMMON_PATHS[3]=C:\Program Files\Android\Sdk
-set COMMON_PATHS[4]=C:\Program Files (x86)\Android\Sdk
+REM Verificar localizacoes comuns diretamente
+call :check_path "%USERPROFILE%\AppData\Local\Android\Sdk"
+if "%FOUND_SDK%" neq "" goto :sdk_found
 
-for /L %%i in (0,1,4) do (
-    call set CURRENT_PATH=%%COMMON_PATHS[%%i]%%
-    call :check_path "!CURRENT_PATH!"
-)
+call :check_path "%LOCALAPPDATA%\Android\Sdk"
+if "%FOUND_SDK%" neq "" goto :sdk_found
+
+call :check_path "C:\Android\Sdk"
+if "%FOUND_SDK%" neq "" goto :sdk_found
+
+call :check_path "C:\Program Files\Android\Sdk"
+if "%FOUND_SDK%" neq "" goto :sdk_found
+
+call :check_path "C:\Program Files (x86)\Android\Sdk"
+if "%FOUND_SDK%" neq "" goto :sdk_found
+
+:sdk_found
 
 if "%FOUND_SDK%"=="" (
     echo [AVISO] Android SDK nao encontrado automaticamente

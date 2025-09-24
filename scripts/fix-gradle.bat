@@ -11,14 +11,14 @@ echo [INFO] Baixando Gradle Wrapper...
 echo Isso pode demorar alguns minutos...
 
 REM Baixar gradle-wrapper.jar
-curl -L -o "gradle\wrapper\gradle-wrapper.jar" "https://services.gradle.org/distributions/gradle-8.4-wrapper.jar"
+curl -L -o "gradle\wrapper\gradle-wrapper.jar" "https://github.com/gradle/gradle/raw/v8.4.0/gradle/wrapper/gradle-wrapper.jar"
 
 if %errorlevel% neq 0 (
     echo [ERRO] Falha ao baixar gradle-wrapper.jar
     echo Tentando metodo alternativo...
     
     REM Tentar com PowerShell
-    powershell -Command "Invoke-WebRequest -Uri 'https://services.gradle.org/distributions/gradle-8.4-wrapper.jar' -OutFile 'gradle\wrapper\gradle-wrapper.jar'"
+    powershell -Command "Invoke-WebRequest -Uri 'https://github.com/gradle/gradle/raw/v8.4.0/gradle/wrapper/gradle-wrapper.jar' -OutFile 'gradle\wrapper\gradle-wrapper.jar'"
     
     if %errorlevel% neq 0 (
         echo [ERRO] Nao foi possivel baixar o Gradle Wrapper
