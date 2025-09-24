@@ -26,10 +26,16 @@ if %errorlevel% neq 0 (
 REM Verificar Android SDK
 echo [INFO] Verificando Android SDK...
 if "%ANDROID_HOME%"=="" (
-    echo [AVISO] ANDROID_HOME nao configurado!
-    echo Configure a variavel de ambiente ANDROID_HOME.
-    echo Exemplo: C:\Users\%USERNAME%\AppData\Local\Android\Sdk
+    echo [ERRO] ANDROID_HOME nao configurado!
+    echo.
+    echo Execute primeiro: scripts\quick-setup.bat
+    echo Ou configure manualmente:
+    echo 1. Instale Android Studio
+    echo 2. Configure ANDROID_HOME = caminho_do_SDK
+    echo 3. Adicione ao PATH: %%ANDROID_HOME%%\tools;%%ANDROID_HOME%%\platform-tools
+    echo.
     pause
+    exit /b 1
 )
 
 REM Verificar Git
