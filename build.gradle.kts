@@ -9,13 +9,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1" apply false
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
+// Repositories are managed in settings.gradle.kts
 
 subprojects {
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
