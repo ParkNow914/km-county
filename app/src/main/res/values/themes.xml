@@ -1,51 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme -->
-    <style name="Theme.RidePricing" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.KMCounty" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
         <!-- Customize your theme here -->
-        <item name="colorPrimary">@color/primary_color</item>
-        <item name="colorOnPrimary">@color/on_primary_color</item>
-        <item name="colorPrimaryContainer">@color/primary_container_color</item>
-        <item name="colorOnPrimaryContainer">@color/on_primary_container_color</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorOnBackground</item>
         
-        <item name="colorSecondary">@color/secondary_color</item>
-        <item name="colorOnSecondary">@color/on_secondary_color</item>
-        <item name="colorSecondaryContainer">@color/secondary_container_color</item>
-        <item name="colorOnSecondaryContainer">@color/on_secondary_container_color</item>
+        <!-- Material Components theming -->
+        <item name="materialButtonStyle">@style/Widget.KMCounty.Button</item>
+        <item name="textAppearanceHeadline1">@style/TextAppearance.KMCounty.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.KMCounty.Headline2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.KMCounty.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.KMCounty.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.KMCounty.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.KMCounty.Caption</item>
         
-        <item name="colorTertiary">@color/tertiary_color</item>
-        <item name="colorOnTertiary">@color/on_tertiary_color</item>
-        <item name="colorTertiaryContainer">@color/tertiary_container_color</item>
-        <item name="colorOnTertiaryContainer">@color/on_tertiary_container_color</item>
-        
-        <item name="colorError">@color/error_color</item>
-        <item name="colorOnError">@color/on_error_color</item>
-        <item name="colorErrorContainer">@color/error_container_color</item>
-        <item name="colorOnErrorContainer">@color/on_error_container_color</item>
-        
-        <item name="colorSurface">@color/surface_color</item>
-        <item name="colorOnSurface">@color/on_surface_color</item>
-        <item name="colorSurfaceVariant">@color/surface_variant_color</item>
-        <item name="colorOnSurfaceVariant">@color/on_surface_variant_color</item>
-        
-        <item name="colorOutline">@color/outline_color</item>
-        <item name="colorOutlineVariant">@color/outline_variant_color</item>
-        
-        <!-- Status bar -->
-        <item name="android:statusBarColor">@color/primary_color</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
-        
-        <!-- Navigation bar -->
-        <item name="android:navigationBarColor">@color/surface_color</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <!-- CardView style -->
+        <item name="cardViewStyle">@style/Widget.KMCounty.CardView</item>
     </style>
-
-    <!-- Fullscreen theme for splash/onboarding -->
-    <style name="Theme.RidePricing.Fullscreen" parent="Theme.RidePricing">
-        <item name="android:windowFullscreen">false</item>
+    
+    <!-- Theme for Onboarding screens -->
+    <style name="Theme.KMCounty.Onboarding" parent="Theme.KMCounty">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+    
+    <!-- Theme for Settings screens -->
+    <style name="Theme.KMCounty.Settings" parent="Theme.KMCounty">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+    
+    <!-- Button style -->
+    <style name="Widget.KMCounty.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="elevation">2dp</item>
+    </style>
+    
+    <!-- CardView style -->
+    <style name="Widget.KMCounty.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardMaxElevation">8dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+    
+    <!-- Text appearances -->
+    <style name="TextAppearance.KMCounty.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">96sp</item>
+        <item name="android:letterSpacing">-1.5</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+    
+    <style name="TextAppearance.KMCounty.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">60sp</item>
+        <item name="android:letterSpacing">-0.5</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+    
+    <style name="TextAppearance.KMCounty.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.5</item>
+    </style>
+    
+    <style name="TextAppearance.KMCounty.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+    
+    <style name="TextAppearance.KMCounty.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">1.25</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+    
+    <style name="TextAppearance.KMCounty.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.4</item>
+    </style>
+    
+    <!-- Overlay theme -->
+    <style name="Theme.KMCounty.Overlay" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowBackground">@color/surface_color</item>
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
 </resources>

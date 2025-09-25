@@ -1,8 +1,400 @@
+# Arquivos de build do Android/Java/Kotlin
+*.apk
+*.ap_
+*.dex
+*.class
+*.classpath
+*.project
+*.project
+*.settings/
+*.iml
+*.aab
+
+# Arquivos de build
+.idea/
+.gradle/
+build/
+.cxx/
+local.properties
+*.keystore
+*.jks
+*.properties
+*.json
+*.keystore
+*.truststore
+*.p12
+*.der
+*.pem
+*.pfx
+
+# Logs
+*.log
+logs/
+
+# Arquivos de configuração local
+local.properties
+keystore.properties
+
+# Google Services
+google-services.json
+
+# Firebase
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+fastlane/.env
+fastlane/.env.*
+
+# Arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Arquivos de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos gerados automaticamente
+**/build/
+**/out/
+**/bin/
+
+# Arquivos de cache
+.cache/
+*.swp
+*~
+
+# Arquivos de configuração do Android Studio
+.idea/
+.idea/*
+!.idea/codeStyles/
+!.idea/codeTemplates/
+!.idea/copyright/
+!.idea/deploymentTargetDropDown.xml
+!.idea/inspectionProfiles/
+!.idea/scopes/
+!.idea/vcs.xml
+!.idea/gradle.xml
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/runConfigurations/
+!.idea/runConfigurations/
+!.idea/shelf/
+!.idea/tasks.xml
+!.idea/workspace.xml
+
+# Arquivos de usuário do Android Studio
+.idea/libraries/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/caches
+.idea/modules.xml
+.idea/navEditor.xml
+.idea/vcs.xml
+.idea/*.xml
+.idea/*.iml
+
+# Arquivos de configuração do Kotlin
+.kotlin/
+*.kapt
+
+# Arquivos de configuração do Firebase
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Arquivos de configuração do Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics.properties
+
+# Arquivos de configuração do Play Store
+play/
+release_notes/
+
+# Arquivos de configuração do App Bundle
+bundle/
+
+# Arquivos de configuração do Gradle
+.gradle/
+build/
+
+# Arquivos de configuração do AndroidX
+.cxx/
+.externalNativeBuild/
+
+# Arquivos de configuração do Room
+**/room-*-db/
+
+# Arquivos de configuração do Navigation
+**/navigation/*.xml
+
+# Arquivos de configuração do DataStore
+**/datastore/
+
+# Arquivos de configuração do Hilt
+**/hilt/
+
+# Arquivos de configuração do KSP
+.ksp/
+
+# Arquivos de configuração do Kover
+.kover/
+
+# Arquivos de configuração do Detekt
+detekt/
+
+# Arquivos de configuração do Ktlint
+.ktlint/
+
+# Arquivos de configuração do Dokka
+build/dokka/
+
+# Arquivos de configuração do Jacoco
+build/reports/jacoco/
+build/jacoco/
+
+# Arquivos de configuração do SonarQube
+.sonar/
+
+# Arquivos de configuração do Detox
+artifacts/
+
+# Arquivos de configuração do Flutter
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Arquivos de configuração do React Native
+android/app/build/
+android/app/debug.keystore
+android/app/debug/
+android/app/release/
+android/app/src/main/assets/index.android.bundle
+android/app/src/main/assets/index.android.bundle.meta
+android/app/src/main/res/drawable-*/
+android/app/src/main/res/raw/
+android/app/build/
+android/app/build/
+android/app/build/
+
+# Arquivos de configuração do Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de configuração do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de configuração do Ruby
+*.gem
+.bundle/
+
+# Arquivos de configuração do Cocoapods
+Pods/
+*.xcworkspace/
+
+# Arquivos de configuração do Xcode
+*.xcodeproj/
+*.xcworkspace/
+
+# Arquivos de configuração do Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Arquivos de configuração do Android
+*.apk
+*.ap_
+*.dex
+*.class
+*.classpath
+*.project
+*.project
+*.settings/
+*.iml
+*.aab
+
+# Arquivos de configuração do Android Studio
+.idea/
+.idea/*
+!.idea/codeStyles/
+!.idea/codeTemplates/
+!.idea/copyright/
+!.idea/deploymentTargetDropDown.xml
+!.idea/inspectionProfiles/
+!.idea/scopes/
+!.idea/vcs.xml
+!.idea/gradle.xml
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/runConfigurations/
+!.idea/runConfigurations/
+!.idea/shelf/
+!.idea/tasks.xml
+!.idea/workspace.xml
+
+# Arquivos de configuração do Gradle Wrapper
+gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Arquivos de configuração do Maven
+target/
+
+# Arquivos de configuração do IntelliJ
+out/
+.idea_modules/
+*.iws
+*.ipr
+*.iml
+.idea/
+
+# Arquivos de configuração do Eclipse
+.settings/
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.project
+
+# Arquivos de configuração do NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Arquivos de configuração do VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Arquivos de configuração do AndroidX
+.cxx/
+.externalNativeBuild/
+
+# Arquivos de configuração do Room
+**/room-*-db/
+
+# Arquivos de configuração do Navigation
+**/navigation/*.xml
+
+# Arquivos de configuração do DataStore
+**/datastore/
+
+# Arquivos de configuração do Hilt
+**/hilt/
+
+# Arquivos de configuração do KSP
+.ksp/
+
+# Arquivos de configuração do Kover
+.kover/
+
+# Arquivos de configuração do Detekt
+detekt/
+
+# Arquivos de configuração do Ktlint
+.ktlint/
+
+# Arquivos de configuração do Dokka
+build/dokka/
+
+# Arquivos de configuração do Jacoco
+build/reports/jacoco/
+build/jacoco/
+
+# Arquivos de configuração do SonarQube
+.sonar/
+
+# Arquivos de configuração do Detox
+artifacts/
+
+# Arquivos de configuração do Flutter
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Arquivos de configuração do React Native
+android/app/build/
+android/app/debug.keystore
+android/app/debug/
+android/app/release/
+android/app/src/main/assets/index.android.bundle
+android/app/src/main/assets/index.android.bundle.meta
+android/app/src/main/res/drawable-*/
+android/app/src/main/res/raw/
+android/app/build/
+android/app/build/
+android/app/build/
+
+# Arquivos de configuração do Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de configuração do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de configuração do Ruby
+*.gem
+.bundle/
+
+# Arquivos de configuração do Cocoapods
+Pods/
+*.xcworkspace/
+
+# Arquivos de configuração do Xcode
+*.xcodeproj/
+*.xcworkspace/
+
+# Arquivos de configuração do Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 # Built application files
 *.apk
-*.aab
 *.ap_
-*.asar
+*.aab
+*.aab
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -13,9 +405,10 @@
 # Generated files
 bin/
 gen/
-out/
-#  Uncomment the following line if you do NOT want to check gradle into your repository
-#gradle/wrapper/gradle-wrapper.jar
+
+# Gradle files
+.gradle/
+build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -40,14 +433,9 @@ captures/
 .idea/assetWizardSettings.xml
 .idea/dictionaries
 .idea/libraries
-# Android Studio 3 in .gitignore file.
 .idea/caches
-.idea/modules.xml
-# Comment next line if keeping position of elements in Navigation Editor is desired
-.idea/navEditor.xml
 
 # Keystore files
-# Uncomment the following lines if you do not want to check your keystore files in.
 *.jks
 *.keystore
 
@@ -56,14 +444,14 @@ captures/
 .cxx/
 
 # Google Services (e.g. APIs or Firebase)
-# google-services.json
+google-services.json
 
 # Freeline
 freeline.py
 freeline/
 freeline_project_description.json
 
-# fastlane
+# Fastlane
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
@@ -71,24 +459,60 @@ fastlane/test_output
 fastlane/readme.md
 
 # Version control
-.svn/
+vcs.xml
 
-# Android Patch
-gen-external-apklibs
+# Local configuration file (sdk path, etc)
+local.properties
 
-# macOS
+# OSX
 .DS_Store
 
-# Windows
+# Windows image file caches
 Thumbs.db
-ehthumbs.db
-Desktop.ini
 
-# Linux
-*~
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
 
-# Built Visual Studio Code Extensions
-*.vsix
+# Windows shortcuts
+*.lnk
+
+# Log Files
+*.log
+
+# Android Studio generated files
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
 
 # Gradle files
 .gradle/
@@ -97,50 +521,414 @@ build/
 # Local configuration file (sdk path, etc)
 local.properties
 
-# Signing files
-.signing/
+# Proguard folder generated by Eclipse
+proguard/
 
-# User-specific configurations
-*.sublime-project
-*.sublime-workspace
-
-# OS-specific files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Release builds
-release/
-*.apk
-*.aab
-
-# Test outputs
-test-results/
-screenshots/
-
-# Backup files
-*.tmp
-*.bak
-*.swp
-*~.nib
-
-# Logs
-logs/
+# Log Files
 *.log
 
-# Privacy sensitive files
-keystore.properties
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+.idea/modules.xml
+.idea/
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
 google-services.json
 
-# IDE specific files
-.vscode/
-.idea/
-*.iml
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
 
-# Build artifacts
-**/build/
-**/out/
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Proguard folder generated by Eclipse
+proguard/
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# OSX
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Log Files
+*.log
+
+# Android Studio generated files
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Proguard folder generated by Eclipse
+proguard/
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+.idea/modules.xml
+.idea/
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Proguard folder generated by Eclipse
+proguard/
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# OSX
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Log Files
+*.log
+
+# Android Studio generated files
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Proguard folder generated by Eclipse
+proguard/
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+.idea/modules.xml
+.idea/
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml

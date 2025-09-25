@@ -1,8 +1,6 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -10,9 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 23
-        targetSdk = 34
-
+        minSdk = 21 // ML Kit requires at least API 21
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -26,42 +22,42 @@ android {
             )
         }
     }
+    
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+    
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
+    }
+    
+    buildFeatures {
+        buildConfig = true
     }
 }
 
 dependencies {
-    // Modules
-    implementation(project(":core"))
-
     // Core Android
     implementation("androidx.core:core-ktx:1.12.0")
-
-    // ML Kit Text Recognition (on-device)
-    implementation("com.google.mlkit:text-recognition:16.0.0")
-
-    // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-compiler:2.48")
-
+    
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-
-    // Logging
-    implementation("com.jakewharton.timber:timber:5.0.1")
-
+    
+    // ML Kit for text recognition (on-device)
+    implementation("com.google.mlkit:text-recognition:16.0.0")
+    
+    // CameraX for image analysis
+    val cameraxVersion = "1.3.0"
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-view:1.3.0")
+    
     // Testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("androidx.test.ext:junit:1.1.5")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation("com.google.truth:truth:1.1.4")
-    testImplementation("io.mockk:mockk:1.13.8")
-
+    testImplementation("io.mockk:mockk:1.13.7")
+    
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }

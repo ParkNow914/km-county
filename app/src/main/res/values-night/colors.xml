@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#BB86FC</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryVariant">#BB86FC</color>
+    <color name="colorOnPrimary">#000000</color>
+    
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#03DAC6</color>
+    <color name="colorSecondaryVariant">#03DAC6</color>
+    <color name="colorOnSecondary">#000000</color>
+    
+    <!-- Background Colors -->
+    <color name="colorBackground">#121212</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorSurface">#1E1E1E</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    
+    <!-- Error Color -->
+    <color name="colorError">#CF6679</color>
+    <color name="colorOnError">#000000</color>
+    
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#FFFFFFFF</color>
+    <color name="colorTextSecondary">#B3FFFFFF</color>
+    <color name="colorTextHint">#80FFFFFF</color>
+    <color name="colorTextDisabled">#80FFFFFF</color>
+    
+    <!-- Status Bar Color -->
+    <color name="colorStatusBar">#000000</color>
+    
+    <!-- Divider Color -->
+    <color name="colorDivider">#1FFFFFFF</color>
+    
+    <!-- Overlay Colors -->
+    <color name="overlay_background">#E6000000</color>
+    <color name="overlay_text">#FFFFFF</color>
+    <color name="overlay_border">#FFFFFF</color>
+    
+    <!-- Ride Status Colors -->
+    <color name="ride_status_good">#4CAF50</color>
+    <color name="ride_status_warning">#FFC107</color>
+    <color name="ride_status_bad">#F44336</color>
+    
+    <!-- Common UI Elements -->
+    <color name="button_background">#BB86FC</color>
+    <color name="button_text">#000000</color>
+    <color name="card_background">#1E1E1E</color>
+    <color name="card_elevation">#1FFFFFFF</color>
+    
+    <!-- Text Input -->
+    <color name="text_input_background">#1E1E1E</color>
+    <color name="text_input_hint">#B3FFFFFF</color>
+    <color name="text_input_text">#FFFFFF</color>
+    <color name="text_input_error">#CF6679</color>
+    
+    <!-- Switch -->
+    <color name="switch_thumb">#BB86FC</color>
+    <color name="switch_track">#757575</color>
+    <color name="switch_track_active">#BB86FC</color>
+    
+    <!-- Progress -->
+    <color name="progress_background">#424242</color>
+    <color name="progress_foreground">#BB86FC</color>
+    
+    <!-- Bottom Navigation -->
+    <color name="bottom_nav_background">#1E1E1E</color>
+    <color name="bottom_nav_icon">#B3FFFFFF</color>
+    <color name="bottom_nav_icon_selected">#BB86FC</color>
+    
+    <!-- Snackbar -->
+    <color name="snackbar_background">#323232</color>
+    <color name="snackbar_text">#FFFFFF</color>
+    <color name="snackbar_action">#FFC107</color>
+    
+    <!-- Floating Action Button -->
+    <color name="fab_background">#BB86FC</color>
+    <color name="fab_icon">#000000</color>
+    <color name="fab_ripple">#1FFFFFFF</color>
+</resources>

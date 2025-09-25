@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+       Backup all shared preferences and Room database
+       Exclude files that shouldn't be backed up
+    -->
+    <include domain="sharedpref" path="."/>
+    <include domain="database" path="."/>
+    
+    <!-- Exclude shared preferences that might contain sensitive information -->
+    <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
+    
+    <!-- Exclude specific files that shouldn't be backed up -->
+    <exclude domain="file" path="sensitive/"/>
+    <exclude domain="file" path="cache/"/>
+    <exclude domain="database" path="sensitive_database"/>
+    
+    <!-- Include specific files that should be backed up -->
+    <include domain="file" path="documents/" requireFlags="clientSideEncryption"/>
+</full-backup-content>

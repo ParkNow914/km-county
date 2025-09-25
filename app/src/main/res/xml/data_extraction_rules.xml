@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data-extraction-rules>
     <cloud-backup>
-        <!-- Disable cloud backup for privacy -->
-        <exclude domain="datastore" />
-        <exclude domain="database" />
-        <exclude domain="shared_pref" />
-        <exclude domain="external" />
+        <!-- Rules for Auto Backup for Apps -->
+        <include domain="sharedpref" path="."/>
+        <include domain="database" path="."/>
+        <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
+        <exclude domain="file" path="sensitive/"/>
     </cloud-backup>
     
     <device-transfer>
-        <!-- Disable device transfer to prevent data leaks -->
-        <exclude domain="datastore" />
-        <exclude domain="database" />
-        <exclude domain="shared_pref" />
-        <exclude domain="external" />
+        <!-- Rules for Direct Boot and Device-to-Device Transfer -->
+        <include domain="sharedpref" path="."/>
+        <include domain="database" path="."/>
+        <exclude domain="sharedpref" path="sensitive_prefs.xml"/>
+        <exclude domain="file" path="sensitive/"/>
     </device-transfer>
 </data-extraction-rules>

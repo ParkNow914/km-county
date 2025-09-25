@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Configuração base para todas as conexões -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <!-- Trust preinstalled CAs -->
+            <certificates src="system" />
+            <!-- Additionally trust user added CAs -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Configuração específica para domínios de produção -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.kmcounty.com</domain>
+        <domain includeSubdomains="true">firebasestorage.googleapis.com</domain>
+        <trust-anchors>
+            <certificates src="@raw/network_security_config" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Configuração para debug - permite tráfego não criptografado -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

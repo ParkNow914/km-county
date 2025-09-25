@@ -1,139 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- App Name -->
-    <string name="app_name">Assistente R$/km</string>
-    <string name="app_subtitle">Analise preços de corridas em tempo real</string>
-
-    <!-- Main Screen -->
-    <string name="service_status_title">Status dos Serviços</string>
-    <string name="status_active">Ativo e Monitorando</string>
-    <string name="status_ready">Pronto para Ativar</string>
-    <string name="status_setup_needed">Configuração Necessária</string>
+    <!-- App Info -->
+    <string name="app_name">KM County</string>
+    <string name="app_short_name">KM County</string>
+    <string name="app_description">Calculadora de R$/km para motoristas de aplicativo</string>
     
-    <string name="accessibility_service">Serviço de Acessibilidade</string>
-    <string name="overlay_service">Overlay Flutuante</string>
-    <string name="permission_needed">Permissão necessária</string>
-    <string name="service_active">Ativo</string>
-    <string name="service_inactive">Inativo</string>
-
-    <string name="current_ride">Corrida Atual</string>
-    <string name="price_per_km">R$/km</string>
-    <string name="price_per_minute">R$/min</string>
-    <string name="total_price">Preço Total</string>
-    <string name="distance">Distância</string>
-    <string name="estimated_time">Tempo Est.</string>
-    
-    <string name="no_ride_detected">Nenhuma corrida detectada</string>
-    <string name="no_ride_subtitle">Abra um app de transporte para começar a monitorar preços</string>
-    
-    <string name="low_confidence_warning">Confiança baixa - verifique manualmente</string>
-    
-    <string name="quick_actions">Ações Rápidas</string>
-    <string name="settings">Configurações</string>
-    <string name="privacy">Privacidade</string>
-
-    <!-- Onboarding -->
-    <string name="onboarding_title">Configuração Inicial</string>
-    <string name="onboarding_welcome_title">Bem-vindo ao Assistente R$/km</string>
-    <string name="onboarding_welcome_subtitle">Analise preços de corridas de forma inteligente e privada</string>
-    
-    <string name="feature_read_only">Apenas Leitura</string>
-    <string name="feature_read_only_desc">Não aceita nem recusa corridas automaticamente</string>
-    <string name="feature_privacy">100% Privado</string>
-    <string name="feature_privacy_desc">Todo processamento é feito localmente no seu dispositivo</string>
-    <string name="feature_calculation">Cálculo Inteligente</string>
-    <string name="feature_calculation_desc">Mostra R$/km e R$/min com indicadores visuais</string>
-
-    <string name="onboarding_privacy_title">Compromisso com sua Privacidade</string>
-    <string name="privacy_commitment">Este aplicativo foi desenvolvido com privacidade em mente:</string>
-    <string name="privacy_point_1">Nenhum dado pessoal é coletado ou enviado para servers</string>
-    <string name="privacy_point_2">Todo processamento é feito localmente no seu dispositivo</string>
-    <string name="privacy_point_3">Informações pessoais são filtradas automaticamente</string>
-    <string name="privacy_point_4">Logs são opcionais e podem ser apagados a qualquer momento</string>
-    <string name="privacy_point_5">Código fonte é aberto para auditoria pública</string>
-
-    <string name="onboarding_permissions_title">Permissões Necessárias</string>
-    <string name="onboarding_permissions_subtitle">Para funcionar, o app precisa de duas permissões importantes</string>
-    
-    <string name="accessibility_permission">Acessibilidade</string>
-    <string name="accessibility_permission_desc">Para ler informações visíveis na tela de apps de transporte</string>
-    <string name="enable_accessibility">Ativar Acessibilidade</string>
-    
-    <string name="overlay_permission">Overlay</string>
-    <string name="overlay_permission_desc">Para mostrar preços em uma janela flutuante</string>
-    <string name="enable_overlay">Ativar Overlay</string>
-
-    <string name="onboarding_complete_title">Tudo Pronto!</string>
-    <string name="onboarding_complete_subtitle">Seu assistente está configurado e pronto para usar</string>
-    <string name="onboarding_incomplete_title">Configuração Incompleta</string>
-    <string name="onboarding_incomplete_subtitle">Ative todas as permissões para continuar</string>
-    
-    <string name="ready_to_start">Pronto para Começar</string>
-    <string name="ready_to_start_desc">Abra um app de transporte e veja a mágica acontecer!</string>
-
-    <!-- Navigation -->
-    <string name="back">Voltar</string>
-    <string name="next">Próximo</string>
+    <!-- Common -->
+    <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
-    <string name="complete">Concluir</string>
-    <string name="finish">Finalizar</string>
-
-    <!-- Settings -->
-    <string name="settings_title">Configurações</string>
-    <string name="price_thresholds">Limites de Preços</string>
-    <string name="good_price_threshold">Preço Bom (Verde)</string>
-    <string name="neutral_price_threshold">Preço Neutro (Laranja)</string>
-    <string name="confidence_threshold">Confiança Mínima</string>
-    <string name="conservative_mode">Modo Conservador</string>
-    <string name="conservative_mode_desc">Reduz falsos positivos, mas pode perder algumas detecções</string>
-    <string name="logging_enabled">Logs de Debug</string>
-    <string name="logging_enabled_desc">Salva logs locais para resolução de problemas</string>
-    <string name="vibration_enabled">Vibração</string>
-    <string name="vibration_enabled_desc">Vibra quando detecta uma nova corrida</string>
-    <string name="clear_all_data">Apagar Todos os Dados</string>
-    <string name="clear_all_data_desc">Remove configurações e logs salvos</string>
-
-    <!-- Privacy Policy -->
-    <string name="privacy_policy_title">Política de Privacidade</string>
+    <string name="save">Salvar</string>
+    <string name="delete">Excluir</string>
+    <string name="edit">Editar</string>
+    <string name="done">Pronto</string>
+    <string name="next">Próximo</string>
+    <string name="back">Voltar</string>
+    <string name="skip">Pular</string>
+    <string name="continue_text">Continuar</string>
+    <string name="error">Erro</string>
+    <string name="success">Sucesso</string>
+    <string name="warning">Aviso</string>
+    <string name="loading">Carregando…</string>
+    <string name="retry">Tentar novamente</string>
+    <string name="close">Fechar</string>
+    <string name="settings">Configurações</string>
+    <string name="permissions">Permissões</string>
+    <string name="enable">Ativar</string>
+    <string name="disable">Desativar</string>
+    <string name="enabled">Ativado</string>
+    <string name="disabled">Desativado</string>
+    <string name="on">Ligado</string>
+    <string name="off">Desligado</string>
+    
+    <!-- Navigation -->
+    <string name="title_home">Início</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notificações</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_settings">Configurações</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_help">Ajuda</string>
+    <string name="title_privacy_policy">Política de Privacidade</string>
+    <string name="title_terms_of_service">Termos de Uso</string>
+    <string name="title_licenses">Licenças</string>
+    
+    <!-- Permissions -->
+    <string name="permission_rationale_title">Permissão necessária</string>
+    <string name="permission_rationale_message">Para que o aplicativo funcione corretamente, é necessário conceder a permissão de acessibilidade.</string>
+    <string name="permission_denied">Permissão negada</string>
+    <string name="permission_denied_forever">Você negou a permissão permanentemente. Por favor, ative-a manualmente nas configurações do dispositivo.</string>
+    <string name="open_settings">Abrir configurações</string>
+    <string name="accessibility_permission_title">Permissão de Acessibilidade</string>
+    <string name="accessibility_permission_message">O KM County precisa de permissão de acessibilidade para detectar automaticamente as telas de pedido de corrida.</string>
+    <string name="overlay_permission_title">Permissão de Sobreposição</string>
+    <string name="overlay_permission_message">O KM County precisa de permissão para sobrepor outros aplicativos para exibir os cálculos em uma janela flutuante.</string>
+    <string name="notification_permission_title">Permissão de Notificação</string>
+    <string name="notification_permission_message">O KM County precisa de permissão para exibir notificações para mantê-lo informado sobre suas corridas.</string>
     
     <!-- Accessibility Service -->
-    <string name="accessibility_service_label">Assistente R$/km</string>
-    <string name="accessibility_service_description">Monitora apps de transporte para calcular preços por quilômetro</string>
-
-    <!-- Notifications -->
-    <string name="overlay_notification_title">Assistente R$/km</string>
-    <string name="overlay_notification_text">Monitorando preços de corridas</string>
-    <string name="stop_service">Parar</string>
-
-    <!-- Errors -->
-    <string name="error_accessibility_permission">Permissão de acessibilidade necessária</string>
-    <string name="error_overlay_permission">Permissão de overlay necessária</string>
-    <string name="error_generic">Ocorreu um erro inesperado</string>
-
-    <!-- Units -->
-    <string name="currency_format">R$ %.2f</string>
-    <string name="distance_format">%.1f km</string>
-    <string name="time_format">%d min</string>
-    <string name="confidence_format">%d%%</string>
-
-    <!-- Content Descriptions -->
-    <string name="close">Fechar</string>
-    <string name="expand">Expandir</string>
-    <string name="collapse">Recolher</string>
-    <string name="warning">Aviso</string>
-    <string name="success">Sucesso</string>
-    <string name="error">Erro</string>
-
-    <!-- Ride Detection -->
-    <string name="ride_detected">Corrida detectada</string>
-    <string name="ride_ended">Corrida finalizada</string>
-    <string name="calculating">Calculando…</string>
-    <string name="searching">Buscando corridas…</string>
-
-    <!-- App Info -->
-    <string name="version">Versão</string>
-    <string name="about">Sobre</string>
-    <string name="licenses">Licenças</string>
-    <string name="support">Suporte</string>
-    <string name="github">GitHub</string>
+    <string name="accessibility_service_label">Serviço de Detecção de Corridas</string>
+    <string name="accessibility_service_description">Detecta automaticamente telas de pedido de corrida em aplicativos de transporte.</string>
+    <string name="accessibility_service_not_running">Serviço de acessibilidade não está em execução</string>
+    <string name="accessibility_service_running">Serviço de acessibilidade em execução</string>
+    <string name="accessibility_service_enable_instructions">Por favor, ative o serviço de acessibilidade nas configurações do dispositivo para que o aplicativo funcione corretamente.</string>
+    
+    <!-- Ride Information -->
+    <string name="ride_detected">Corrida detectada!</string>
+    <string name="no_ride_detected">Nenhuma corrida detectada</string>
+    <string name="price_per_km">R$/km: %1$s</string>
+    <string name="price_per_minute">R$/min: %1$s</string>
+    <string name="distance">Distância: %1$s km</string>
+    <string name="duration">Duração: %1$s min</string>
+    <string name="total_price">Valor total: R$ %1$s</string>
+    <string name="estimated_earnings">Ganho estimado: R$ %1$s/h</string>
+    <string name="low_confidence">(Baixa confiança nos dados)</string>
+    <string name="waiting_for_ride">Aguardando informações da corrida…</string>
+    
+    <!-- Settings -->
+    <string name="settings_general">Geral</string>
+    <string name="settings_appearance">Aparência</string>
+    <string name="settings_notifications">Notificações</string>
+    <string name="settings_privacy">Privacidade</string>
+    <string name="settings_about">Sobre</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_system">Sistema</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Escuro</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_system">Sistema</string>
+    <string name="settings_language_pt">Português (Brasil)</string>
+    <string name="settings_language_en">English (United States)</string>
+    <string name="settings_language_es">Español</string>
+    <string name="settings_currency">Moeda</string>
+    <string name="settings_currency_brl">Real (R$)</string>
+    <string name="settings_currency_usd">Dólar (US$)</string>
+    <string name="settings_currency_eur">Euro (€)</string>
+    <string name="settings_distance_unit">Unidade de distância</string>
+    <string name="settings_distance_unit_km">Quilômetros (km)</string>
+    <string name="settings_distance_unit_mi">Milhas (mi)</string>
+    <string name="settings_speed_unit">Unidade de velocidade</string>
+    <string name="settings_speed_unit_kmh">Quilômetros por hora (km/h)</string>
+    <string name="settings_speed_unit_mph">Milhas por hora (mph)</string>
+    <string name="settings_start_on_boot">Iniciar com o dispositivo</string>
+    <string name="settings_show_notifications">Mostrar notificações</string>
+    <string name="settings_vibrate">Vibrar ao detectar corrida</string>
+    <string name="settings_sound">Tocar som ao detectar corrida</string>
+    <string name="settings_keep_screen_on">Manter tela ligada</string>
+    <string name="settings_show_overlay">Mostrar sobreposição</string>
+    <string name="settings_show_floating_button">Mostrar botão flutuante</string>
+    <string name="settings_overlay_opacity">Opacidade da sobreposição</string>
+    <string name="settings_overlay_position">Posição da sobreposição</string>
+    <string name="settings_overlay_position_top_left">Canto superior esquerdo</string>
+    <string name="settings_overlay_position_top_right">Canto superior direito</string>
+    <string name="settings_overlay_position_bottom_left">Canto inferior esquerdo</string>
+    <string name="settings_overlay_position_bottom_right">Canto inferior direito</string>
+    <string name="settings_overlay_position_center">Centro</string>
+    <string name="settings_overlay_text_size">Tamanho do texto da sobreposição</string>
+    <string name="settings_overlay_text_color">Cor do texto da sobreposição</string>
+    <string name="settings_overlay_background_color">Cor de fundo da sobreposição</string>
+    <string name="settings_overlay_border_color">Cor da borda da sobreposição</string>
+    <string name="settings_overlay_border_width">Largura da borda da sobreposição</string>
+    <string name="settings_overlay_corner_radius">Raio dos cantos da sobreposição</string>
+    <string name="settings_overlay_padding">Preenchimento da sobreposição</string>
+    <string name="settings_overlay_margin">Margem da sobreposição</string>
+    <string name="settings_overlay_animation">Animação da sobreposição</string>
+    <string name="settings_overlay_animation_none">Nenhuma</string>
+    <string name="settings_overlay_animation_fade">Esmaecer</string>
+    <string name="settings_overlay_animation_slide">Deslizar</string>
+    <string name="settings_overlay_animation_scale">Escala</string>
+    <string name="settings_overlay_animation_duration">Duração da animação</string>
+    <string name="settings_overlay_animation_duration_fast">Rápido</string>
+    <string name="settings_overlay_animation_duration_normal">Normal</string>
+    <string name="settings_overlay_animation_duration_slow">Devagar</string>
+    <string name="settings_overlay_animation_duration_custom">Personalizado</string>
+    <string name="settings_overlay_animation_duration_custom_hint">ms</string>
+    <string name="settings_overlay_animation_duration_custom_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_title">Duração personalizada</string>
+    <string name="settings_overlay_animation_duration_custom_message">Digite a duração da animação em milissegundos (100-5000 ms):</string>
+    <string name="settings_overlay_animation_duration_custom_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_title">Duração personalizada</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_message">Digite a duração da animação em milissegundos (100-5000 ms):</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_hint">ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_default">Padrão (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom">Personalizado (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_hint">Personalizado</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_default">Padrão (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom">Personalizado (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_hint">Personalizado</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_default">Padrão (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom">Personalizado (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_hint">Personalizado</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_default">Padrão (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom">Personalizado (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_hint">Personalizado</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_default">Padrão (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom">Personalizado (%1$d ms)</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_hint">Personalizado</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_error">Por favor, insira um valor entre 100 e 5000 ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_positive">OK</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_negative">Cancelar</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_neutral">Padrão</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_summary">%1$d ms</string>
+    <string name="settings_overlay_animation_duration_custom_dialog_custom_custom_custom_custom_custom_default">Padrão (%1$d ms)</string>
+    
+    <!-- Overlay Service -->
+    <string name="notification_overlay_title">KM County em execução</string>
+    <string name="notification_overlay_text">Monitorando pedidos de corrida</string>
+    <string name="notification_channel_name">Status do Serviço</string>
+    <string name="notification_channel_description">Notificações sobre o status do serviço em segundo plano</string>
 </resources>

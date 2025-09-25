@@ -11,11 +11,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        gradlePluginPortal()
     }
 }
 
-rootProject.name = "AssistenteRidePricing"
+rootProject.name = "KM County"
+
 include(":app")
 include(":core")
 include(":ml")

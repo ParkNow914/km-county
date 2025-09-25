@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/overlay_background"
+    android:elevation="8dp"
+    android:minWidth="200dp">
+
+    <!-- Visualização Compacta -->
+    <TextView
+        android:id="@+id/overlay_price_per_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$/km: R$ 0,00"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Outros elementos compactos -->
+    <TextView
+        android:id="@+id/overlay_price_per_minute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$/min: R$ 0,00"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/overlay_confidence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confiança: 85%"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:alpha="0.8"
+        android:gravity="center"
+        android:layout_marginTop="2dp" />
+
+    <!-- Visualização Expandida (inicialmente gone) -->
+    <LinearLayout
+        android:id="@+id/overlay_expanded_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:padding="8dp"
+        android:radius="4dp">
+
+        <TextView
+            android:id="@+id/expanded_price_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor Total: R$ 0,00"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/expanded_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância: 0,0 km"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/expanded_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tempo: 0 min"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/expanded_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fonte: accessibility"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

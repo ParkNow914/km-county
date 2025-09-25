@@ -1,180 +1,178 @@
-# Assistente R$/km - Sistema de Análise de Corridas On-Device
+# KM County - Assistente de Preços de Corridas
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Android](https://img.shields.io/badge/Android-23+-green.svg)
-![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-purple.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg)](https://kotlinlang.org/)
+[![Min SDK](https://img.shields.io/badge/minSdk-23-green)](https://developer.android.com/about/versions/android-6.0)
+[![Firebase](https://img.shields.io/badge/Firebase-Enabled-orange)](https://firebase.google.com/)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue)](https://github.com/features/actions)
 
-Um aplicativo Android open-source que **lê** informações da tela de apps de transporte (Uber/99/similares) e apresenta **R$/km** e **R$/min** em um overlay flutuante. **100% on-device**, sem automação, sem envio de dados pessoais.
+O KM County é um aplicativo Android que ajuda motoristas de aplicativo a calcular rapidamente o valor por quilômetro (R$/km) e por minuto (R$/min) de corridas em apps de transporte como Uber e 99.
 
-## 🚀 Funcionalidades
+## ✨ Funcionalidades
 
-- ✅ **Detecção automática** de pedidos de corrida na tela
-- ✅ **Cálculo em tempo real** de R$/km e R$/min  
-- ✅ **Overlay flutuante** não-intrusivo com indicadores visuais
-- ✅ **100% processamento local** - sem envio de dados
-- ✅ **Sem automação** - apenas leitura e análise
-- ✅ **Filtros de privacidade** - descarta automaticamente PII
-- ✅ **Configurável** - thresholds personalizáveis por região
-- ✅ **Open source** - código auditável (MIT License)
+- 🔍 Detecção automática de telas de pedido de corrida
+- 🧮 Cálculo em tempo real de R$/km e R$/min
+- 🎨 Overlay não intrusivo com código de cores
+- 🔒 100% processamento local - sem coleta de dados pessoais
+- 🛡️ Modo conservador para evitar falsos positivos
+- 🌙 Suporte a tema escuro
+- 📊 Analytics e monitoramento de performance com Firebase
+- 🔔 Notificações push com Firebase Cloud Messaging
+- 🚨 Relatórios de crash automáticos com Firebase Crashlytics
 
-## 🛡️ Privacidade e Segurança
+## 🏗️ Arquitetura de Produção
 
-- **Processamento 100% local** usando AccessibilityService + ML Kit on-device
-- **Nenhum dado enviado** para servidores externos
-- **Filtros automáticos** para descartar informações pessoais (PII)
-- **Logs opcionais** e sempre locais com opção "apagar tudo"
-- **Código aberto** para auditabilidade completa
-- **Compatível com LGPD** - política de privacidade incluída
+### Integrações Firebase
 
-## 📱 Como Funciona
+- **Firebase Analytics**: Acompanhamento de uso e comportamento dos usuários
+- **Firebase Crashlytics**: Relatórios automáticos de crashes e erros
+- **Firebase Performance Monitoring**: Monitoramento de performance do app
+- **Firebase Remote Config**: Configurações remotas para updates sem nova versão
+- **Firebase Cloud Messaging**: Notificações push para atualizações importantes
 
-1. **Detecção**: Monitora mudanças na tela via AccessibilityService
-2. **Extração**: Identifica valores, distâncias e tempos estimados  
-3. **Cálculo**: Computa R$/km e R$/min com validações
-4. **Exibição**: Mostra resultado em overlay com cores indicativas:
-   - 🟢 Verde: R$/km ≥ 1,50 (recomendado)
-   - 🟠 Laranja: 0,80 ≤ R$/km < 1,50 (neutro)
-   - 🔴 Vermelho: R$/km < 0,80 (não recomendado)
+### CI/CD e Automação
 
-## 🏗️ Arquitetura
+- **GitHub Actions**: Pipeline completo de CI/CD
+- **Fastlane**: Automação de build, teste e deploy para Google Play Store
+- **Build Variants**: Debug, Staging e Release com configurações específicas
+- **Product Flavors**: Ambientes de desenvolvimento e produção
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│ AccessibilityService │ → │   Core Parser   │ → │   Overlay UI    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         ↓                       ↓                       ↓
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   ML Kit OCR    │    │  PII Filtering  │    │   Settings UI   │
-│   (Fallback)    │    │   & Validation  │    │  & Onboarding   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+### Segurança
 
-## 🚀 Instalação Rápida
+- **Assinatura de APK**: Configuração segura com keystore protegida
+- **ProGuard/R8**: Obfuscação de código em builds de produção
+- **Variáveis de Ambiente**: Configurações sensíveis em arquivo .env
+- **Network Security Config**: Configurações seguras de rede
 
-### Via GitHub Releases (Recomendado)
-1. Baixe o APK mais recente da [página de releases](../../releases)
-2. Ative "Origens desconhecidas" nas configurações do Android
-3. Instale o APK
-4. Siga o onboarding para ativar permissões
+## 📱 Requisitos
 
-### Via F-Droid
-```bash
-# Em breve - submissão em andamento
-```
+- Android 6.0 (API 23) ou superior
+- Permissão de Acessibilidade (para leitura da tela)
+- Permissão de Sobrepôr outros apps (para o overlay)
 
-### Para Desenvolvedores
-```bash
-git clone https://github.com/[seu-usuario]/kmcounty.git
-cd kmcounty
-./gradlew assembleDebug
-```
+## 🚀 Instalação
 
-## 🔧 Build e Desenvolvimento
+1. Baixe o APK mais recente na seção [Releases](https://github.com/seu-usuario/km-county/releases)
+2. Habilite "Fontes desconhecidas" nas configurações do Android
+3. Instale o APK baixado
+4. Siga o assistente de configuração inicial
+
+## 🔧 Como usar
+
+1. Abra o KM County
+2. Ative a permissão de Acessibilidade nas configurações do Android
+3. Ative a permissão para sobrepor outros apps
+4. Abra seu app de transporte preferido
+5. Quando um pedido de corrida aparecer, o KM County mostrará automaticamente o R$/km e R$/min
+
+## 🛠️ Desenvolvimento
 
 ### Pré-requisitos
-- Android Studio Arctic Fox+ 
-- JDK 11+
-- Android SDK 23+
-- Kotlin 1.9+
 
-### Comandos Úteis
+- Android Studio Flamingo (2022.2.1) ou superior
+- JDK 17
+- Android SDK 33+
+- Git
+
+### Configuração Inicial
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/km-county.git
+   cd km-county
+   ```
+
+2. Configure as variáveis de ambiente:
+
+   ```bash
+   cp .env.example .env
+   # Edite o arquivo .env com suas chaves de API
+   ```
+
+3. Configure o Firebase:
+   - Baixe o arquivo `google-services.json` do Firebase Console
+   - Substitua o arquivo `app/google-services.json` existente
+
+4. Configure a assinatura (para builds de produção):
+
+   ```bash
+   # Crie uma keystore ou use uma existente
+   # Atualize o arquivo keystore.properties com suas credenciais
+   ```
+
+5. Abra o projeto no Android Studio e aguarde a sincronização do Gradle
+
+### Build Variants
+
+O projeto suporta diferentes build variants:
+
+- **Debug**: Para desenvolvimento local
+- **Staging**: Para testes internos (sem debug, com minify)
+- **Release**: Para produção (obfuscação completa)
+
+Para selecionar um variant, use o menu Build Variants no Android Studio ou execute:
+
 ```bash
-# Build debug
-./gradlew assembleDebug
-
-# Executar testes
-./scripts/run-tests.sh
-
-# Build release
-./scripts/build-release.sh
-
-# Lint e verificações
-./gradlew ktlintCheck detekt
+./gradlew assembleDebug      # Build debug
+./gradlew assembleStaging    # Build staging
+./gradlew assembleRelease    # Build release
 ```
 
-### Estrutura do Projeto
+### Product Flavors
+
+- **dev**: Ambiente de desenvolvimento
+- **prod**: Ambiente de produção
+
+### CI/CD com GitHub Actions
+
+O projeto inclui um pipeline completo de CI/CD que:
+
+- Executa testes automatizados
+- Builda APKs para diferentes variants
+- Faz upload dos artefatos
+- Deploy automático para Google Play Store (branch main)
+
+Para configurar o CI/CD:
+
+1. Configure os secrets no repositório GitHub:
+   - `GOOGLE_PLAY_JSON_KEY`: Chave de serviço do Google Play
+   - `KEYSTORE_FILE`: Arquivo de keystore (base64 encoded)
+   - `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`: Credenciais da keystore
+
+2. Configure o Fastlane:
+
+   ```bash
+   cd fastlane
+   bundle install
+   ```
+
+### Deploy Manual
+
+Para deploy manual usando Fastlane:
+
+```bash
+# Build e deploy para internal testing
+bundle exec fastlane beta
+
+# Build e deploy para production
+bundle exec fastlane deploy
 ```
-/app                  # Módulo principal Android
-/core                 # Parser e regras de negócio  
-/ml                   # Wrappers ML Kit e OCR
-/scripts              # Scripts de build e release
-/ci                   # GitHub Actions workflows
-/docs                 # Documentação detalhada
-/tests                # Testes e datasets
-```
 
-## 📋 Permissões Necessárias
+## 🤝 Contribuição
 
-- **Accessibility Service**: Para ler conteúdo da tela
-- **System Alert Window**: Para exibir overlay
-- **Media Projection** (opcional): Fallback OCR se necessário
+Contribuições são bem-vindas! Por favor, leia nosso [guia de contribuição](CONTRIBUTING.md) antes de enviar um pull request.
 
-Todas as permissões são explicadas detalhadamente no onboarding.
+## 📝 Licença
 
-## ⚙️ Configuração
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-- **Thresholds personalizáveis** para cores dos indicadores
-- **Modo conservador** (reduz falsos positivos)
-- **Confiança mínima OCR** configurável
-- **Logs opcionais** para debugging
-- **Região** para ajustes de preços locais
+## 📄 Política de Privacidade
 
-## 🧪 Testes e Qualidade
+O KM County não coleta, armazena ou compartilha nenhum dado pessoal. Todo o processamento é feito localmente no seu dispositivo. Consulte nossa [Política de Privacidade](PRIVACY_POLICY.md) para mais informações.
 
-- **Cobertura de testes**: 70%+ no core parser
-- **Testes instrumentados**: 20+ cenários de UI
-- **Dataset OCR**: 100+ imagens anônimas  
-- **Acurácia**: 90%+ preços, 85%+ distâncias
-- **CI/CD**: Build, lint e testes automáticos
+## 📧 Contato
 
-## 📄 Documentação
+Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter) - [seu.email@exemplo.com](mailto:seu.email@exemplo.com)
 
-- [Instalação Detalhada](docs/INSTALL.md)
-- [Política de Privacidade](docs/PRIVACY_POLICY.md) 
-- [Declaração Play Store](docs/PLAYSTORE_DECLARATION.md)
-- [Textos de Onboarding](docs/ONBOARDING_TEXTS.md)
-- [Guia de Contribuição](CONTRIBUTING.md)
-
-## 🛠️ Suporte e Contribuição
-
-- **Issues**: [GitHub Issues](../../issues)
-- **Contribuições**: Veja [CONTRIBUTING.md](CONTRIBUTING.md)
-- **Discussões**: [GitHub Discussions](../../discussions)
-
-## ⚖️ Legal e Compliance
-
-- **Licença**: MIT (código 100% open source)
-- **LGPD**: Política de privacidade completa incluída
-- **Play Store**: Declaração de uso de AccessibilityService documentada
-- **Não-responsabilidade**: Ferramenta informativa, use por sua conta
-
-## 🔄 Roadmap
-
-### v1.0.0 - MVP ✅
-- [x] AccessibilityService básico
-- [x] Parser de preços/distâncias 
-- [x] Overlay flutuante
-- [x] Configurações básicas
-
-### v1.1.0 - Melhorias
-- [ ] Suporte a mais apps de transporte
-- [ ] Histórico de corridas (local)
-- [ ] Estatísticas pessoais
-- [ ] Melhorias na precisão do parser
-
-### v1.2.0 - Avançado  
-- [ ] Machine Learning para detecção
-- [ ] Modo offline completo
-- [ ] Export de dados (JSON)
-- [ ] Temas personalizáveis
-
-## 📞 Contato
-
-- **GitHub**: [Issues](../../issues) e [Discussions](../../discussions)
-
----
-
-**⚠️ Importante**: Este aplicativo é uma ferramenta informativa. Use por sua própria conta e risco. Recomendamos não usar para decisões automatizadas. Sempre verifique as informações manualmente antes de aceitar corridas.
-
-**🔒 Privacidade**: Nenhum dado pessoal é coletado ou enviado. Todo processamento é feito localmente no seu dispositivo.
+Link do Projeto: [https://github.com/seu-usuario/km-county](https://github.com/seu-usuario/km-county)

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Configurações gerais do Firebase Cloud Messaging -->
+    <string name="fcm_fallback_notification_channel_label" translatable="false">@string/app_name</string>
+    <string name="fcm_fallback_notification_channel_name" translatable="false">Notificações</string>
+    <string name="fcm_fallback_notification_channel_description" translatable="false">Notificações do aplicativo</string>
+    
+    <!-- Configurações de notificação -->
+    <string name="fcm_default_notification_channel_id" translatable="false">default_channel_id</string>
+    <string name="fcm_default_notification_channel_name" translatable="false">Notificações</string>
+    <string name="fcm_default_notification_channel_description" translatable="false">Notificações gerais do aplicativo</string>
+    
+    <!-- Cores de notificação -->
+    <color name="notification_icon_color">@color/colorPrimary</color>
+    <color name="notification_color">@color/colorPrimary</color>
+    
+    <!-- Ícones de notificação -->
+    <drawable name="notification_icon">@mipmap/ic_launcher</drawable>
+    <drawable name="notification_icon_small">@mipmap/ic_launcher_round</drawable>
+    
+    <!-- Configurações de prioridade -->
+    <bool name="fcm_fallback_notification_channel_importance">true</bool>
+    <integer name="fcm_fallback_notification_channel_importance_value">3</integer> <!-- IMPORTANCE_DEFAULT -->
+    
+    <!-- Configurações de som -->
+    <string name="fcm_fallback_notification_channel_sound" translatable="false">default</string>
+    <bool name="fcm_fallback_notification_channel_enable_lights">true</bool>
+    <bool name="fcm_fallback_notification_channel_enable_vibration">true</bool>
+    
+    <!-- Configurações de vibração -->
+    <bool name="fcm_fallback_notification_channel_vibration_enabled">true</bool>
+    <string name="fcm_fallback_notification_channel_vibration_pattern" translatable="false">0,300,100,300,100,300</string>
+    
+    <!-- Configurações de LED -->
+    <bool name="fcm_fallback_notification_channel_light_enabled">true</bool>
+    <color name="fcm_fallback_notification_channel_light_color">#FF0000</color>
+    <integer name="fcm_fallback_notification_channel_light_on_ms">1000</integer>
+    <integer name="fcm_fallback_notification_channel_light_off_ms">1000</integer>
+    
+    <!-- Configurações de visibilidade -->
+    <integer name="fcm_fallback_notification_channel_visibility">-1</integer> <!-- VISIBILITY_PUBLIC -->
+    <bool name="fcm_fallback_notification_channel_show_badge">true</bool>
+    <bool name="fcm_fallback_notification_channel_bypass_dnd">false</bool>
+    
+    <!-- Configurações de grupo -->
+    <string name="fcm_fallback_notification_channel_group_id" translatable="false">fcm_fallback_notification_channel_group</string>
+    <string name="fcm_fallback_notification_channel_group_name" translatable="false">@string/app_name</string>
+    
+    <!-- Configurações de prioridade de notificação -->
+    <integer name="fcm_fallback_notification_priority">0</integer> <!-- PRIORITY_DEFAULT -->
+    <integer name="fcm_fallback_notification_visibility">1</integer> <!-- VISIBILITY_PUBLIC -->
+    
+    <!-- Configurações de tempo limite -->
+    <integer name="fcm_default_sender_id">@string/default_web_client_id</integer>
+    <integer name="fcm_messages_per_second">10</integer>
+    <integer name="fcm_max_messages_per_second">20</integer>
+    
+    <!-- Configurações de cache -->
+    <integer name="fcm_cache_expiration_days">7</integer>
+    <integer name="fcm_cache_size">1000</integer>
+    
+    <!-- Configurações de rede -->
+    <integer name="fcm_connect_timeout_millis">10000</integer>
+    <integer name="fcm_read_timeout_millis">10000</integer>
+    <integer name="fcm_write_timeout_millis">10000</integer>
+    
+    <!-- Configurações de retentativa -->
+    <integer name="fcm_max_retries">3</integer>
+    <integer name="fcm_initial_backoff_seconds">1</integer>
+    <integer name="fcm_maximum_backoff_seconds">30</integer>
+    
+    <!-- Configurações de depuração -->
+    <bool name="fcm_debug_logging_enabled">false</bool>
+    <bool name="fcm_analytics_enabled">true</bool>
+    
+    <!-- Configurações de métricas -->
+    <bool name="fcm_analytics_collection_enabled">true</bool>
+    <bool name="fcm_analytics_auto_collection_enabled">true</bool>
+    
+    <!-- Configurações de privacidade -->
+    <bool name="fcm_analytics_collect_user_properties">true</bool>
+    <bool name="fcm_analytics_collect_user_id">false</bool>
+    
+    <!-- Configurações de persistência -->
+    <bool name="fcm_persistence_enabled">true</bool>
+    <integer name="fcm_persistence_max_items">1000</integer>
+    
+    <!-- Configurações de sincronização -->
+    <bool name="fcm_sync_enabled">true</bool>
+    <integer name="fcm_sync_period_seconds">86400</integer> <!-- 24 horas -->
+    
+    <!-- Configurações de notificação em primeiro plano -->
+    <bool name="fcm_foreground_notification_enabled">true</bool>
+    <bool name="fcm_foreground_notification_visibility">true</bool>
+    <bool name="fcm_foreground_notification_show_badge">true</bool>
+    <bool name="fcm_foreground_notification_enable_lights">true</bool>
+    <bool name="fcm_foreground_notification_enable_vibration">true</bool>
+    <bool name="fcm_foreground_notification_enable_sound">true</bool>
+    
+    <!-- Configurações de notificação em segundo plano -->
+    <bool name="fcm_background_notification_enabled">true</bool>
+    <bool name="fcm_background_notification_visibility">true</bool>
+    <bool name="fcm_background_notification_show_badge">true</bool>
+    <bool name="fcm_background_notification_enable_lights">true</bool>
+    <bool name="fcm_background_notification_enable_vibration">true</bool>
+    <bool name="fcm_background_notification_enable_sound">true</bool>
+    
+    <!-- Configurações de notificação em modo não perturbável -->
+    <bool name="fcm_bypass_dnd_enabled">false</bool>
+    <bool name="fcm_bypass_dnd_priority">false</bool>
+    
+    <!-- Configurações de notificação de alta prioridade -->
+    <bool name="fcm_high_priority_notification_enabled">true</bool>
+    <bool name="fcm_high_priority_notification_visibility">true</bool>
+    <bool name="fcm_high_priority_notification_show_badge">true</bool>
+    <bool name="fcm_high_priority_notification_enable_lights">true</bool>
+    <bool name="fcm_high_priority_notification_enable_vibration">true</bool>
+    <bool name="fcm_high_priority_notification_enable_sound">true</bool>
+    
+    <!-- Configurações de notificação de prioridade normal -->
+    <bool name="fcm_normal_priority_notification_enabled">true</bool>
+    <bool name="fcm_normal_priority_notification_visibility">true</bool>
+    <bool name="fcm_normal_priority_notification_show_badge">true</bool>
+    <bool name="fcm_normal_priority_notification_enable_lights">true</bool>
+    <bool name="fcm_normal_priority_notification_enable_vibration">true</bool>
+    <bool name="fcm_normal_priority_notification_enable_sound">true</bool>
+    
+    <!-- Configurações de notificação de baixa prioridade -->
+    <bool name="fcm_low_priority_notification_enabled">true</bool>
+    <bool name="fcm_low_priority_notification_visibility">false</bool>
+    <bool name="fcm_low_priority_notification_show_badge">false</bool>
+    <bool name="fcm_low_priority_notification_enable_lights">false</bool>
+    <bool name="fcm_low_priority_notification_enable_vibration">false</bool>
+    <bool name="fcm_low_priority_notification_enable_sound">false</bool>
+    
+    <!-- Configurações de notificação mínima -->
+    <bool name="fcm_min_priority_notification_enabled">true</bool>
+    <bool name="fcm_min_priority_notification_visibility">false</bool>
+    <bool name="fcm_min_priority_notification_show_badge">false</bool>
+    <bool name="fcm_min_priority_notification_enable_lights">false</bool>
+    <bool name="fcm_min_priority_notification_enable_vibration">false</bool>
+    <bool name="fcm_min_priority_notification_enable_sound">false</bool>
+</resources>

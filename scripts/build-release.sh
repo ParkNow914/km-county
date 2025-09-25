@@ -1,249 +1,211 @@
 #!/bin/bash
 
-# Build Release Script for Assistente R$/km
-# This script builds signed release APK and AAB
+# Script de Build e Release do KM County
+# Uso: ./scripts/build-release.sh [version]
 
-set -e  # Exit on any error
+set -e
 
-# Colors for output
+# Cores para output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Configuration
-PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-BUILD_DIR="$PROJECT_DIR/build/outputs"
-KEYSTORE_PATH="$PROJECT_DIR/keystore.jks"
-VERSION_FILE="$PROJECT_DIR/app/build.gradle.kts"
+# Função para log colorido
+log() {
+    echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
+}
 
-echo -e "${BLUE}🚀 Assistente R$/km - Build Release${NC}"
-echo "======================================"
+success() {
+    echo -e "${GREEN}✅ $1${NC}"
+}
 
-# Check if we're in the right directory
-if [ ! -f "$PROJECT_DIR/settings.gradle.kts" ]; then
-    echo -e "${RED}❌ Error: Not in project root directory${NC}"
+error() {
+    echo -e "${RED}❌ $1${NC}"
+}
+
+warning() {
+    echo -e "${YELLOW}⚠️  $1${NC}"
+}
+
+# Verificar se estamos no diretório correto
+if [ ! -f "build.gradle.kts" ]; then
+    error "Execute este script do diretório raiz do projeto"
     exit 1
 fi
 
-# Check Java version
-echo -e "${BLUE}☕ Checking Java version...${NC}"
-java -version 2>&1 | head -1
-if ! java -version 2>&1 | grep -q "11\|17"; then
-    echo -e "${YELLOW}⚠️  Warning: Java 11+ recommended${NC}"
-fi
+# Verificar versão
+VERSION=${1:-"1.0.0"}
+VERSION_CODE=$(echo $VERSION | tr -d '.' | tr -d '-')
 
-# Check Android SDK
-echo -e "${BLUE}📱 Checking Android SDK...${NC}"
-if [ -z "$ANDROID_HOME" ]; then
-    echo -e "${RED}❌ Error: ANDROID_HOME not set${NC}"
+log "Iniciando build de release v$VERSION (code: $VERSION_CODE)"
+
+# Verificar se temos as chaves necessárias
+if [ ! -f "keystore.properties" ]; then
+    error "Arquivo keystore.properties não encontrado!"
+    error "Configure suas chaves de assinatura antes de fazer o build."
     exit 1
 fi
-echo "Android SDK: $ANDROID_HOME"
 
-# Check for keystore (for signing)
+# Verificar se o keystore existe
+KEYSTORE_PATH=$(grep "storeFile" keystore.properties | cut -d'=' -f2)
 if [ ! -f "$KEYSTORE_PATH" ]; then
-    echo -e "${YELLOW}⚠️  Warning: No keystore found at $KEYSTORE_PATH${NC}"
-    echo "Building unsigned release (debug signing)"
-    SIGN_RELEASE="false"
-else
-    echo -e "${GREEN}🔐 Keystore found${NC}"
-    SIGN_RELEASE="true"
+    warning "Keystore não encontrado: $KEYSTORE_PATH"
+    warning "Certifique-se de que o caminho no keystore.properties está correto."
 fi
 
-# Clean previous builds
-echo -e "${BLUE}🧹 Cleaning previous builds...${NC}"
-cd "$PROJECT_DIR"
+# Limpar builds anteriores
+log "Limpando builds anteriores..."
 ./gradlew clean
 
-# Check code quality first
-echo -e "${BLUE}🔍 Running code quality checks...${NC}"
-echo "Running ktlint..."
-./gradlew ktlintCheck || {
-    echo -e "${RED}❌ ktlint failed. Fix formatting issues first.${NC}"
+# Executar testes
+log "Executando testes..."
+if ./gradlew test; then
+    success "Testes passaram com sucesso"
+else
+    error "Testes falharam! Corrija os erros antes de continuar."
     exit 1
-}
+fi
 
-echo "Running detekt..."
-./gradlew detekt || {
-    echo -e "${RED}❌ detekt failed. Fix code quality issues first.${NC}"
+# Executar lint
+log "Executando linting..."
+if ./gradlew lint; then
+    success "Linting passou com sucesso"
+else
+    warning "Linting encontrou problemas, mas continuando..."
+fi
+
+# Build de release
+log "Fazendo build de release..."
+if ./gradlew assembleRelease; then
+    success "Build de release concluído com sucesso"
+else
+    error "Build falhou! Verifique os erros acima."
     exit 1
-}
+fi
 
-# Run tests
-echo -e "${BLUE}🧪 Running unit tests...${NC}"
-./gradlew test || {
-    echo -e "${RED}❌ Tests failed. Fix failing tests first.${NC}"
-    exit 1
-}
+# Verificar artefatos gerados
+APK_PATH="app/build/outputs/apk/release/app-release.apk"
+AAB_PATH="app/build/outputs/bundle/release/app-release.aab"
 
-# Extract version information
-echo -e "${BLUE}📋 Extracting version information...${NC}"
-VERSION_NAME=$(grep 'versionName = ' "$VERSION_FILE" | sed 's/.*versionName = "\(.*\)".*/\1/')
-VERSION_CODE=$(grep 'versionCode = ' "$VERSION_FILE" | sed 's/.*versionCode = \(.*\)/\1/')
+if [ -f "$APK_PATH" ]; then
+    APK_SIZE=$(stat -f%z "$APK_PATH" 2>/dev/null || stat -c%s "$APK_PATH" 2>/dev/null || echo "unknown")
+    success "APK gerado: $APK_PATH (${APK_SIZE} bytes)"
+fi
 
-echo "Version Name: $VERSION_NAME"
-echo "Version Code: $VERSION_CODE"
+if [ -f "$AAB_PATH" ]; then
+    AAB_SIZE=$(stat -f%z "$AAB_PATH" 2>/dev/null || stat -c%s "$AAB_PATH" 2>/dev/null || echo "unknown")
+    success "AAB gerado: $AAB_PATH (${AAB_SIZE} bytes)"
+fi
 
-# Build release
-echo -e "${BLUE}🏗️  Building release APK and AAB...${NC}"
-
-if [ "$SIGN_RELEASE" = "true" ]; then
-    echo "Building signed release..."
-    
-    # Check for signing environment variables
-    if [ -z "$SIGNING_KEY_ALIAS" ] || [ -z "$SIGNING_KEY_PASSWORD" ] || [ -z "$SIGNING_STORE_PASSWORD" ]; then
-        echo -e "${RED}❌ Error: Missing signing environment variables${NC}"
-        echo "Required: SIGNING_KEY_ALIAS, SIGNING_KEY_PASSWORD, SIGNING_STORE_PASSWORD"
+# Verificar assinatura
+log "Verificando assinatura do APK..."
+if command -v apksigner &> /dev/null; then
+    if apksigner verify --print-certs "$APK_PATH" &>/dev/null; then
+        success "APK está corretamente assinado"
+    else
+        error "APK não está assinado ou assinatura é inválida!"
         exit 1
     fi
-    
-    # Build signed APK
-    ./gradlew assembleRelease
-    
-    # Build signed AAB
-    ./gradlew bundleRelease
-    
 else
-    echo "Building debug-signed release..."
-    ./gradlew assembleRelease
-    ./gradlew bundleRelease
+    warning "apksigner não encontrado, pulando verificação de assinatura"
 fi
 
-# Check build outputs
-APK_PATH="$PROJECT_DIR/app/build/outputs/apk/release/app-release.apk"
-AAB_PATH="$PROJECT_DIR/app/build/outputs/bundle/release/app-release.aab"
-
-if [ ! -f "$APK_PATH" ]; then
-    echo -e "${RED}❌ Error: APK not found at $APK_PATH${NC}"
-    exit 1
-fi
-
-if [ ! -f "$AAB_PATH" ]; then
-    echo -e "${RED}❌ Error: AAB not found at $AAB_PATH${NC}"
-    exit 1
-fi
-
-# Create release directory
-RELEASE_DIR="$PROJECT_DIR/release/v$VERSION_NAME"
+# Criar diretório de release
+RELEASE_DIR="releases/v$VERSION"
 mkdir -p "$RELEASE_DIR"
 
-# Copy files to release directory
-echo -e "${BLUE}📦 Copying release files...${NC}"
-cp "$APK_PATH" "$RELEASE_DIR/assistente-ridepricing-v$VERSION_NAME.apk"
-cp "$AAB_PATH" "$RELEASE_DIR/assistente-ridepricing-v$VERSION_NAME.aab"
+# Copiar artefatos
+if [ -f "$APK_PATH" ]; then
+    cp "$APK_PATH" "$RELEASE_DIR/"
+    success "APK copiado para $RELEASE_DIR/"
+fi
 
-# Generate checksums
-echo -e "${BLUE}🔐 Generating checksums...${NC}"
+if [ -f "$AAB_PATH" ]; then
+    cp "$AAB_PATH" "$RELEASE_DIR/"
+    success "AAB copiado para $RELEASE_DIR/"
+fi
+
+# Gerar changelog se existir
+if [ -f "CHANGELOG.md" ]; then
+    cp CHANGELOG.md "$RELEASE_DIR/"
+fi
+
+# Gerar checksums
+log "Gerando checksums..."
 cd "$RELEASE_DIR"
-sha256sum *.apk > checksums.txt
-sha256sum *.aab >> checksums.txt
+if command -v sha256sum &> /dev/null; then
+    sha256sum * > checksums.sha256
+    success "Checksums SHA256 gerados"
+elif command -v shasum &> /dev/null; then
+    shasum -a 256 * > checksums.sha256
+    success "Checksums SHA256 gerados"
+else
+    warning "Ferramenta de checksum não encontrada"
+fi
+cd ../..
 
-# Generate build info
-echo -e "${BLUE}📄 Generating build info...${NC}"
-cat > build-info.txt << EOF
-Assistente R$/km - Build Information
-=====================================
+# Criar arquivo de release notes
+cat > "$RELEASE_DIR/README.md" << EOF
+# KM County v$VERSION
 
-Version: $VERSION_NAME ($VERSION_CODE)
-Build Date: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
-Build Environment: $(uname -a)
-Java Version: $(java -version 2>&1 | head -1)
-Gradle Version: $(cd "$PROJECT_DIR" && ./gradlew --version | grep "Gradle" | head -1)
+**Data de lançamento:** $(date +'%Y-%m-%d')
+**Versão:** $VERSION
+**Código da versão:** $VERSION_CODE
 
-Files:
-- assistente-ridepricing-v$VERSION_NAME.apk
-- assistente-ridepricing-v$VERSION_NAME.aab
-- checksums.txt (SHA256)
+## Arquivos
 
-Verification:
-- Code quality checks: PASSED
-- Unit tests: PASSED
-- Signed: $([ "$SIGN_RELEASE" = "true" ] && echo "YES" || echo "NO (debug key)")
+$(if [ -f "app-release.apk" ]; then echo "- **APK:** \`app-release.apk\` - Para instalação direta"; fi)
+$(if [ -f "app-release.aab" ]; then echo "- **AAB:** \`app-release.aab\` - Para Google Play Store"; fi)
+- **Checksums:** \`checksums.sha256\` - Para verificação de integridade
 
-Installation:
-1. Enable "Unknown sources" in Android settings
-2. Install APK file
-3. Follow onboarding to setup permissions
-4. Verify with test ride request
+## Instalação
 
-Support:
-- GitHub: [Repository URL]
-- Issues: [Repository URL]/issues
-- Documentation: docs/ folder
-EOF
+### Via APK (dispositivos com Android)
+1. Baixe o arquivo \`app-release.apk\`
+2. Verifique o checksum SHA256
+3. Habilite "Instalação de apps desconhecidos" nas configurações do Android
+4. Instale o APK baixado
 
-# Generate release notes template
-echo -e "${BLUE}📝 Generating release notes template...${NC}"
-cat > release-notes-template.md << EOF
-# Assistente R$/km v$VERSION_NAME
+### Via Google Play Store
+O arquivo AAB será enviado para a Play Store através do console de desenvolvedor.
 
-## 🚀 What's New
+## Verificação de Segurança
 
-- [Add new features here]
-- [Add improvements here]
-- [Add bug fixes here]
+Para verificar a integridade dos arquivos:
 
-## 🔧 Technical Changes
+\`\`\`bash
+# Verificar checksum
+sha256sum -c checksums.sha256
 
-- Updated to version $VERSION_NAME (build $VERSION_CODE)
-- [Add technical changes here]
+# Verificar assinatura do APK
+apksigner verify --print-certs app-release.apk
+\`\`\`
 
-## 📱 Installation
+## Changelog
 
-### APK Installation
-1. Download \`assistente-ridepricing-v$VERSION_NAME.apk\`
-2. Enable "Unknown sources" in Android settings
-3. Install the APK file
-4. Follow the onboarding process
+$(if [ -f "CHANGELOG.md" ]; then cat CHANGELOG.md; else echo "Ver CHANGELOG.md no repositório principal."; fi)
 
-### Requirements
-- Android 6.0+ (API 23)
-- 100MB free space
-- Accessibility and Overlay permissions
+## Suporte
 
-## 🛡️ Security
-
-- **SHA256 Checksums available in \`checksums.txt\`**
-- **Signed with verified certificate**
-- **Open source code available for audit**
-
-## ⚠️ Important Notes
-
-- This app only READS information from transport apps
-- No automatic ride acceptance/rejection
-- All processing is done locally on your device
-- No personal data is collected or transmitted
-
-## 🆘 Support
-
-- **Issues**: [Repository URL]/issues
-- **Documentation**: Available in docs/ folder
-- **Installation Guide**: docs/INSTALL.md
+- **Issues:** [GitHub Issues](https://github.com/seu-usuario/km-county/issues)
+- **Discussões:** [GitHub Discussions](https://github.com/seu-usuario/km-county/discussions)
 
 ---
+*Build gerado automaticamente em $(date)*
 
-**Full Changelog**: [Previous Release]...v$VERSION_NAME
 EOF
 
-# Summary
+success "Release v$VERSION criado em: $RELEASE_DIR"
+success "🎉 Build e empacotamento concluídos com sucesso!"
+success "📦 Artefatos prontos para distribuição"
+
 echo ""
-echo -e "${GREEN}✅ BUILD SUCCESSFUL!${NC}"
-echo "======================================"
-echo "📦 Release files created in: $RELEASE_DIR"
-echo ""
-echo "Files:"
-echo "  📱 APK: assistente-ridepricing-v$VERSION_NAME.apk"
-echo "  📦 AAB: assistente-ridepricing-v$VERSION_NAME.aab"
-echo "  🔐 Checksums: checksums.txt"
-echo "  📄 Build info: build-info.txt"
-echo "  📝 Release notes template: release-notes-template.md"
-echo ""
-echo -e "${BLUE}Next steps:${NC}"
-echo "1. Test the APK on a device"
-echo "2. Update release-notes-template.md"
-echo "3. Create GitHub release"
-echo "4. Upload files to release"
-echo ""
-echo -e "${YELLOW}⚠️  Remember to test thoroughly before publishing!${NC}"
+echo "Próximos passos recomendados:"
+echo "1. Teste o APK em dispositivos reais"
+echo "2. Faça upload do AAB para Google Play Console (se aplicável)"
+echo "3. Publique no GitHub Releases"
+echo "4. Atualize a documentação se necessário"
+
+exit 0

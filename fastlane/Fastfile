@@ -1,0 +1,41 @@
+default_platform(:android)
+
+platform :android do
+  desc "Build the Android app"
+  lane :build do
+    gradle(
+      task: "assemble",
+      build_type: "Release",
+      print_command: true,
+      properties: {
+        "android.injected.signing.store.file" => ENV["KEYSTORE_FILE"],
+        "android.injected.signing.store.password" => ENV["KEYSTORE_PASSWORD"],
+        "android.injected.signing.key.alias" => ENV["KEY_ALIAS"],
+        "android.injected.signing.key.password" => ENV["KEY_PASSWORD"]
+      }
+    )
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    upload_to_play_store(
+      package_name: "com.kmcounty.app",
+      json_key: "fastlane/google-play-credentials.json",
+      track: 'internal',
+      skip_upload_metadata: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+
+  desc "Run all tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Build and deploy a new version"
+  lane :beta do
+    build
+    deploy
+  end
+end

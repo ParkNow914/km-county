@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Configurações gerais do Firebase Performance Monitoring -->
+    <bool name="firebase_performance_collection_enabled">true</bool>
+    <bool name="firebase_performance_logcat_enabled">false</bool>
+    
+    <!-- Configurações de coleta de dados -->
+    <bool name="firebase_performance_is_data_collection_enabled">true</bool>
+    <bool name="firebase_performance_is_enabled">true</bool>
+    
+    <!-- Limites de rastreamento -->
+    <integer name="firebase_performance_max_global_http_metric_count">150</integer>
+    <integer name="firebase_performance_max_http_request_metric_count">50</integer>
+    <integer name="firebase_performance_max_trace_count">50</integer>
+    <integer name="firebase_performance_max_trace_custom_attribute_count">5</integer>
+    <integer name="firebase_performance_max_trace_custom_attribute_size">100</integer>
+    <integer name="firebase_performance_max_trace_name_length">100</integer>
+    
+    <!-- Configurações de amostragem -->
+    <bool name="firebase_performance_is_automatic_screen_reporting_enabled">true</bool>
+    <bool name="firebase_performance_is_manual_screen_reporting_enabled">true</bool>
+    
+    <!-- Configurações de rede -->
+    <integer name="firebase_performance_network_request_sampling_rate">1</integer>
+    <integer name="firebase_performance_trace_sampling_rate">1</integer>
+    
+    <!-- Configurações de cache -->
+    <integer name="firebase_performance_max_cache_size_bytes">1048576</integer> <!-- 1MB -->
+    <integer name="firebase_performance_max_cache_age_ms">604800000</integer> <!-- 7 dias -->
+    
+    <!-- Configurações de log -->
+    <bool name="firebase_performance_log_source_enabled">false</bool>
+    <integer name="firebase_performance_log_source_priority">2</integer> <!-- Log.INFO -->
+    
+    <!-- Configurações de depuração -->
+    <bool name="firebase_performance_debug_mode">false</bool>
+    <bool name="firebase_performance_logcat_enabled">false</bool>
+    
+    <!-- Configurações de monitoramento de tela -->
+    <bool name="firebase_performance_screen_trace_enabled">true</bool>
+    <integer name="firebase_performance_screen_trace_sampling_rate">1</integer>
+    
+    <!-- Configurações de desempenho de inicialização -->
+    <bool name="firebase_performance_startup_trace_enabled">true</bool>
+    <integer name="firebase_performance_startup_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de rede -->
+    <bool name="firebase_performance_network_trace_enabled">true</bool>
+    <integer name="firebase_performance_network_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de memória -->
+    <bool name="firebase_performance_memory_trace_enabled">true</bool>
+    <integer name="firebase_performance_memory_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de CPU -->
+    <bool name="firebase_performance_cpu_trace_enabled">true</bool>
+    <integer name="firebase_performance_cpu_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de bateria -->
+    <bool name="firebase_performance_battery_trace_enabled">true</bool>
+    <integer name="firebase_performance_battery_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de disco -->
+    <bool name="firebase_performance_disk_trace_enabled">true</bool>
+    <integer name="firebase_performance_disk_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de rede -->
+    <bool name="firebase_performance_network_trace_enabled">true</bool>
+    <integer name="firebase_performance_network_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de interface do usuário -->
+    <bool name="firebase_performance_ui_trace_enabled">true</bool>
+    <integer name="firebase_performance_ui_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de memória nativa -->
+    <bool name="firebase_performance_native_memory_trace_enabled">true</bool>
+    <integer name="firebase_performance_native_memory_sample_rate">1</integer>
+    
+    <!-- Configurações de monitoramento de GPU -->
+    <bool name="firebase_performance_gpu_trace_enabled">true</bool>
+    <integer name="firebase_performance_gpu_sample_rate">1</integer>
+</resources>

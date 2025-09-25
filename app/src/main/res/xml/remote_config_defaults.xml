@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <!-- Configurações gerais do app -->
+    <entry>
+        <key>app_version_code</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>app_version_name</key>
+        <value>1.0.0</value>
+    </entry>
+    <entry>
+        <key>app_maintenance_mode</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>app_force_update</key>
+        <value>false</value>
+    </entry>
+    
+    <!-- Configurações de recursos -->
+    <entry>
+        <key>feature_ride_history_enabled</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>feature_analytics_enabled</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>feature_crash_reporting_enabled</key>
+        <value>true</value>
+    </entry>
+    
+    <!-- URLs e endpoints -->
+    <entry>
+        <key>api_base_url</key>
+        <value>https://api.kmcounty.com/v1</value>
+    </entry>
+    <entry>
+        <key>privacy_policy_url</key>
+        <value>https://kmcounty.com/privacy</value>
+    </entry>
+    <entry>
+        <key>terms_of_service_url</key>
+        <value>https://kmcounty.com/terms</value>
+    </entry>
+    
+    <!-- Configurações de UI -->
+    <entry>
+        <key>ui_primary_color</key>
+        <value>#6200EE</value>
+    </entry>
+    <entry>
+        <key>ui_secondary_color</key>
+        <value>#03DAC6</value>
+    </entry>
+    <entry>
+        <key>ui_dark_theme_enabled</key>
+        <value>true</value>
+    </entry>
+    
+    <!-- Taxas e valores padrão -->
+    <entry>
+        <key>default_minimum_fare</key>
+        <value>5.0</value>
+    </entry>
+    <entry>
+        <key>default_price_per_km</key>
+        <value>2.5</value>
+    </entry>
+    <entry>
+        <key>default_price_per_minute</key>
+        <value>0.5</value>
+    </entry>
+    
+    <!-- Mensagens e textos dinâmicos -->
+    <entry>
+        <key>welcome_message</key>
+        <value>Bem-vindo ao KM County!</value>
+    </entry>
+    <entry>
+        <key>maintenance_message</key>
+        <value>Estamos em manutenção. Volte em breve!</value>
+    </entry>
+    <entry>
+        <key>update_message</key>
+        <value>Uma nova versão está disponível. Atualize agora para uma melhor experiência.</value>
+    </entry>
+</defaultsMap>

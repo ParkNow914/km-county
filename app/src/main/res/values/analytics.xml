@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Configurações gerais do Firebase Analytics -->
+    <bool name="firebase_analytics_collection_enabled">true</bool>
+    <bool name="firebase_analytics_collection_deactivated">false</bool>
+    <bool name="firebase_analytics_collection_deactivated_for_analytics">false</bool>
+    
+    <!-- Configurações de coleta de dados -->
+    <bool name="google_analytics_automatic_screen_reporting_enabled">true</bool>
+    <bool name="google_analytics_default_event_parameters_enabled">true</bool>
+    <bool name="google_analytics_collect_adid_enabled">false</bool>
+    
+    <!-- Taxas de amostragem -->
+    <integer name="google_analytics_default_session_timeout">1800</integer> <!-- 30 minutos -->
+    <integer name="google_analytics_dispatch_period">1800</integer> <!-- 30 minutos -->
+    <integer name="google_analytics_sample_frequency">100</integer> <!-- 100% -->
+    
+    <!-- Configurações de privacidade -->
+    <bool name="google_analytics_anonymize_ip">true</bool>
+    <bool name="google_analytics_report_adid">false</bool>
+    <bool name="google_analytics_auto_activity_tracking">true</bool>
+    <bool name="google_analytics_auto_screen_tracking">true</bool>
+    
+    <!-- Configurações de log -->
+    <bool name="google_analytics_debug">false</bool>
+    <bool name="google_analytics_log_level">0</bool> <!-- 0 = VERBOSE, 1 = DEBUG, 2 = INFO, 3 = WARN, 4 = ERROR, 5 = NONE -->
+    
+    <!-- Configurações de persistência -->
+    <integer name="google_analytics_local_dispatch_period">30</integer> <!-- 30 segundos -->
+    <integer name="google_analytics_store_events_millis">604800000</integer> <!-- 7 dias -->
+    
+    <!-- Configurações de campanha -->
+    <bool name="google_analytics_campaign_tracking_enabled">true</bool>
+    <bool name="google_analytics_install_campaign_tracking_enabled">true</bool>
+    
+    <!-- Configurações de publicidade -->
+    <bool name="google_analytics_adid_collection_enabled">false</bool>
+    <bool name="google_analytics_advertiser_id_collection_enabled">false</bool>
+    
+    <!-- Configurações de sessão -->
+    <integer name="google_analytics_session_timeout">1800</integer> <!-- 30 minutos -->
+    <integer name="google_analytics_minimum_session_duration">10000</integer> <!-- 10 segundos -->
+    <integer name="google_analytics_dispatch_period_seconds">1800</integer> <!-- 30 minutos -->
+    
+    <!-- Configurações de rede -->
+    <integer name="google_analytics_dispatch_period_seconds">1800</integer> <!-- 30 minutos -->
+    <integer name="google_analytics_max_stored_hits_per_send">20</integer>
+    
+    <!-- Configurações de cache -->
+    <integer name="google_analytics_max_stored_hits">2000</integer>
+    <integer name="google_analytics_max_stored_hits_per_app">50</integer>
+    <integer name="google_analytics_max_stored_property_count">100</integer>
+    
+    <!-- Configurações de depuração -->
+    <bool name="google_analytics_debug">false</bool>
+    <bool name="google_analytics_verbose_logging_enabled">false</bool>
+    
+    <!-- Configurações de rastreamento de tela -->
+    <bool name="google_analytics_auto_screen_tracking">true</bool>
+    <bool name="google_analytics_auto_activity_tracking">true</bool>
+    
+    <!-- Configurações de rastreamento de exceções -->
+    <bool name="google_analytics_report_uncaught_exceptions">true</bool>
+    <bool name="google_analytics_report_nested_fragments">true</bool>
+    
+    <!-- Configurações de rastreamento de visualização de tela -->
+    <bool name="google_analytics_auto_activity_screen_tracking">true</bool>
+    <bool name="google_analytics_auto_fragment_screen_tracking">true</bool>
+    
+    <!-- Configurações de rastreamento de ciclo de vida -->
+    <bool name="google_analytics_auto_activity_lifecycle_tracking">true</bool>
+    <bool name="google_analytics_auto_fragment_lifecycle_tracking">true</bool>
+    
+    <!-- Configurações de rastreamento de tempo de sessão -->
+    <bool name="google_analytics_session_timeout_tracking_enabled">true</bool>
+    <integer name="google_analytics_session_timeout_seconds">1800</integer> <!-- 30 minutos -->
+    
+    <!-- Configurações de rastreamento de instalação -->
+    <bool name="google_analytics_install_tracking_enabled">true</bool>
+    <bool name="google_analytics_install_referrer_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de campanha -->
+    <bool name="google_analytics_campaign_tracking_enabled">true</bool>
+    <bool name="google_analytics_install_campaign_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de publicidade -->
+    <bool name="google_analytics_adid_collection_enabled">false</bool>
+    <bool name="google_analytics_advertiser_id_collection_enabled">false</bool>
+    
+    <!-- Configurações de rastreamento de desempenho -->
+    <bool name="google_analytics_performance_tracking_enabled">true</bool>
+    <bool name="google_analytics_screen_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de usuário -->
+    <bool name="google_analytics_user_id_tracking_enabled">false</bool>
+    <bool name="google_analytics_user_property_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de eventos -->
+    <bool name="google_analytics_event_tracking_enabled">true</bool>
+    <bool name="google_analytics_auto_event_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de exceções -->
+    <bool name="google_analytics_exception_tracking_enabled">true</bool>
+    <bool name="google_analytics_auto_exception_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de erros -->
+    <bool name="google_analytics_error_tracking_enabled">true</bool>
+    <bool name="google_analytics_auto_error_tracking_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de rede -->
+    <bool name="google_analytics_network_tracking_enabled">true</bool>
+    <bool name="google_analytics_auto_network_tracking_enabled">true</bool>
+</resources>

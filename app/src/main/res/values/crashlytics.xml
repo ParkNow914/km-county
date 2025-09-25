@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Configurações do Crashlytics -->
+    <bool name="firebase_crashlytics_collection_enabled">true</bool>
+    <bool name="firebase_crashlytics_ndk_enabled">true</bool>
+    
+    <!-- Chaves de configuração do Crashlytics -->
+    <string name="com.crashlytics.android.build_id" translatable="false">
+        @string/crashlytics_build_id
+    </string>
+    
+    <!-- Configurações de log -->
+    <bool name="firebase_crashlytics_collect_logs">true</bool>
+    <bool name="firebase_crashlytics_collect_ndk_crash_dumps">true</bool>
+    <bool name="firebase_analytics_collection_enabled">true</bool>
+    
+    <!-- Configurações de depuração -->
+    <bool name="firebase_crashlytics_debug_enabled">false</bool>
+    <bool name="firebase_performance_collection_enabled">true</bool>
+    
+    <!-- Configurações de rastreamento de erros não fatais -->
+    <bool name="firebase_crashlytics_track_native_crashes">true</bool>
+    <bool name="firebase_crashlytics_report_upload_enabled">true</bool>
+    
+    <!-- Configurações de privacidade -->
+    <bool name="firebase_crashlytics_collect_user_ids">false</bool>
+    <bool name="firebase_crashlytics_collect_custom_keys">true</bool>
+    
+    <!-- Configurações de desempenho -->
+    <integer name="firebase_crashlytics_max_complete_sessions_count">4</integer>
+    <integer name="firebase_crashlytics_delay">5000</integer>
+    <integer name="firebase_crashlytics_max_chained_exception_depth">16</integer>
+    <integer name="firebase_crashlytics_max_exception_param_size">1024</integer>
+    <integer name="firebase_crashlytics_max_reports_when_upload_scheduled">4</integer>
+    
+    <!-- Configurações de rede -->
+    <integer name="firebase_crashlytics_max_retries">3</integer>
+    <integer name="firebase_crashlytics_timeout">30000</integer>
+    
+    <!-- Configurações de cache -->
+    <integer name="firebase_crashlytics_max_complete_sessions_count">4</integer>
+    <integer name="firebase_crashlytics_max_stack_frames">100</integer>
+    
+    <!-- Configurações avançadas -->
+    <bool name="firebase_crashlytics_automatic_screen_reporting_enabled">true</bool>
+    <bool name="firebase_crashlytics_automatic_data_collection_enabled">true</bool>
+</resources>

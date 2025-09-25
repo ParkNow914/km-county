@@ -1,356 +1,198 @@
-# Textos de Onboarding - Assistente R$/km
+# Textos de Onboarding - KM County
 
-Este documento contém todos os textos utilizados no processo de onboarding do aplicativo, organizados por tela e funcionalidade.
+Este arquivo contém todos os textos exibidos durante o processo de onboarding e configuração inicial do aplicativo, conforme requisitos de transparência e consentimento (LGPD).
 
-## 🏠 Tela de Boas-vindas (Página 1)
+## Tela de Boas-Vindas
 
-### Título Principal
-```
-Bem-vindo ao Assistente R$/km
-```
+**Título:** Bem-vindo ao KM County
 
-### Subtítulo
-```
-Analise preços de corridas de forma inteligente e privada
-```
+**Subtítulo:** Seu assistente inteligente para avaliar corridas
 
-### Funcionalidades Destacadas
+**Descrição:**
+O KM County é um aplicativo que ajuda motoristas de aplicativo a avaliar rapidamente se uma corrida vale a pena, calculando automaticamente R$/km e R$/min baseado nas informações da tela.
 
-#### 1. Apenas Leitura
-**Título**: `Apenas Leitura`
-**Descrição**: `Não aceita nem recusa corridas automaticamente`
+**Características principais:**
+- ✅ Detecção automática de pedidos de corrida
+- ✅ Cálculo em tempo real de R$/km e R$/min
+- ✅ Overlay discreto e não intrusivo
+- ✅ Processamento 100% local no seu dispositivo
+- ✅ Sem automação de aceitar/recusar corridas
 
-#### 2. 100% Privado
-**Título**: `100% Privado`
-**Descrição**: `Todo processamento é feito localmente no seu dispositivo`
+## Tela de Consentimento - Permissões
 
-#### 3. Cálculo Inteligente
-**Título**: `Cálculo Inteligente`
-**Descrição**: `Mostra R$/km e R$/min com indicadores visuais`
+**Título:** Permissões Necessárias
 
-## 🔒 Tela de Privacidade (Página 2)
-
-### Título Principal
-```
-Compromisso com sua Privacidade
-```
-
-### Texto de Introdução
-```
-Este aplicativo foi desenvolvido com privacidade em mente:
-```
-
-### Pontos de Privacidade
-
-#### Ponto 1
-```
-Nenhum dado pessoal é coletado ou enviado para servidores
-```
-
-#### Ponto 2
-```
-Todo processamento é feito localmente no seu dispositivo
-```
-
-#### Ponto 3
-```
-Informações pessoais são filtradas automaticamente
-```
-
-#### Ponto 4
-```
-Logs são opcionais e podem ser apagados a qualquer momento
-```
-
-#### Ponto 5
-```
-Código fonte é aberto para auditoria pública
-```
-
-## 🔐 Tela de Permissões (Página 3)
-
-### Título Principal
-```
-Permissões Necessárias
-```
-
-### Subtítulo
-```
-Para funcionar, o app precisa de duas permissões importantes
-```
+**Subtítulo:** Precisamos de algumas permissões para funcionar
 
 ### Permissão de Acessibilidade
+**Ícone:** ♿
+**Título:** Acesso à Acessibilidade
+**Descrição:**
+Esta permissão permite que o app leia informações da tela dos aplicativos de transporte (como Uber, 99, etc.) para identificar quando um pedido de corrida aparece e extrair os valores de preço e distância.
 
-#### Título
-```
-Acessibilidade
-```
+**Por que precisamos:**
+- Identificar telas de pedido de corrida automaticamente
+- Extrair preço total, distância e tempo estimado
+- Calcular R$/km e R$/min para você
 
-#### Descrição
-```
-Para ler informações visíveis na tela de apps de transporte
-```
+**Garantia:** O app NUNCA executa ações automáticas nos outros apps. Apenas lê informações visuais.
 
-#### Botão de Ação
-```
-Ativar Acessibilidade
-```
+### Permissão de Sobrepor Outros Apps
+**Ícone:** 📱
+**Título:** Exibir Sobre Outros Apps
+**Descrição:**
+Esta permissão permite mostrar um pequeno overlay flutuante com os cálculos de R$/km e R$/min quando um pedido de corrida é detectado.
 
-#### Texto Explicativo Detalhado
-```
-O serviço de acessibilidade permite que o aplicativo leia textos visíveis na tela dos apps de transporte (Uber, 99, etc.) para identificar:
+**Por que precisamos:**
+- Mostrar os cálculos de forma rápida e discreta
+- Não interferir no funcionamento dos apps de transporte
+- Manter você informado sem abrir o KM County
 
-• Preços das corridas (ex: R$ 12,50)
-• Distâncias estimadas (ex: 3,2 km) 
-• Tempos de viagem (ex: 15 min)
+**Garantia:** O overlay é sempre opcional e pode ser desativado a qualquer momento.
 
-IMPORTANTE:
-• Apenas leitura - nunca clica ou interage com outros apps
-• Filtra automaticamente informações pessoais
-• Monitora apenas apps de transporte específicos
-• Pode ser desativado a qualquer momento nas configurações do Android
-```
+## Tela de Consentimento - Privacidade
 
-### Permissão de Overlay
+**Título:** Privacidade e Segurança
 
-#### Título
-```
-Overlay
-```
+**Subtítulo:** Seus dados ficam seguros no seu dispositivo
 
-#### Descrição
-```
-Para mostrar preços em uma janela flutuante
-```
+### Como Funcionamos
+**Texto principal:**
+Todo o processamento acontece exclusivamente no seu dispositivo Android. Nenhuma informação é enviada para servidores externos, exceto para os serviços do Google que você optar por ativar (Analytics e Crash Reporting).
 
-#### Botão de Ação
-```
-Ativar Overlay
-```
+### O que Coletamos (se ativado)
+- **Logs de uso (opcional):** Apenas estatísticas anônimas sobre o uso do app
+- **Relatórios de erro (opcional):** Informações técnicas sobre crashes para melhorar o app
+- **Dados de performance (opcional):** Métricas de velocidade do app
 
-#### Texto Explicativo Detalhado
-```
-A permissão de overlay permite mostrar uma pequena janela flutuante sobre outros aplicativos com:
+**Importante:** Todos os dados são anonimizados e não incluem informações pessoais, localização ou dados das corridas.
 
-• Cálculo de R$/km em tempo real
-• Cálculo de R$/min (quando disponível)
-• Indicadores visuais (verde/laranja/vermelho)
-• Botão para expandir detalhes
+### O que NÃO coletamos
+- ❌ Dados pessoais (nome, CPF, telefone, endereço)
+- ❌ Informações das corridas (valores, rotas, passageiros)
+- ❌ Localização em tempo real
+- ❌ Histórico de uso de outros apps
+- ❌ Dados financeiros ou bancários
 
-CARACTERÍSTICAS:
-• Janela pequena e não-intrusiva
-• Apenas exibição - não interfere com apps
-• Pode ser fechada ou movida
-• Não bloqueia interações com outros apps
-```
+## Tela de Configuração Inicial
 
-## ✅ Tela de Conclusão (Página 4)
+**Título:** Configurações Iniciais
 
-### Configuração Completa
+**Subtítulo:** Personalize o app para suas necessidades
 
-#### Título
-```
-Tudo Pronto!
-```
+### Thresholds de Cor
+**Descrição:** Configure os valores de referência para as cores do indicador:
 
-#### Subtítulo
-```
-Seu assistente está configurado e pronto para usar
-```
+- **🟢 Verde:** Corridas muito rentáveis (R$/km ≥ 1.50)
+- **🟡 Laranja:** Corridas medianas (0.80 ≤ R$/km < 1.50)
+- **🔴 Vermelho:** Corridas pouco rentáveis (R$/km < 0.80)
 
-#### Card de "Pronto para Começar"
-**Título**: `Pronto para Começar`
-**Descrição**: `Abra um app de transporte e veja a mágica acontecer!`
+### Modo Conservador
+**Descrição:** Ative para reduzir falsos positivos
+Quando ativado, o app é mais rigoroso na detecção de telas de corrida, evitando mostrar overlays em situações duvidosas.
 
-### Configuração Incompleta
+## Tela Final de Conclusão
 
-#### Título
-```
-Configuração Incompleta
-```
+**Título:** Tudo Pronto!
 
-#### Subtítulo  
-```
-Ative todas as permissões para continuar
-```
+**Subtítulo:** O KM County está configurado e funcionando
 
-#### Instruções Adicionais
-```
-Para usar o Assistente R$/km, você precisa:
+**Texto de conclusão:**
+Parabéns! O KM County está pronto para ajudar você a avaliar corridas de forma inteligente.
 
-1. ✅ Ativar o serviço de acessibilidade
-2. ✅ Ativar a permissão de overlay
+**Próximos passos:**
+1. Abra seu app de transporte preferido
+2. Quando um pedido de corrida aparecer, o KM County mostrará automaticamente R$/km e R$/min
+3. Use as cores como guia para decidir aceitar ou não
 
-Toque nos botões "Ativar" nas seções acima e siga as instruções do sistema.
-```
+**Dica:** Você pode ajustar as configurações a qualquer momento no menu do app.
 
-## 🔘 Botões de Navegação
+---
 
-### Botão Voltar
-```
-Voltar
-```
+## Textos de Erro e Avisos
 
-### Botão Próximo
-```
-Próximo
-```
+### Erro: Permissão de Acessibilidade Não Concedida
+**Título:** Permissão Necessária
+**Mensagem:** Para funcionar, o KM County precisa da permissão de Acessibilidade. Toque em "Configurar" para ativar.
 
-### Botão Cancelar
-```
-Cancelar
-```
+### Erro: Permissão de Overlay Não Concedida
+**Título:** Permissão de Overlay Necessária
+**Mensagem:** Para mostrar os cálculos, precisamos da permissão para exibir sobre outros apps. Toque em "Configurar" para ativar.
 
-### Botão Concluir
-```
-Concluir
-```
+### Aviso: Modo Conservador Ativado
+**Texto:** O modo conservador está ativado. Isso pode fazer com que algumas corridas não sejam detectadas automaticamente para evitar falsos positivos.
 
-## ⚠️ Avisos e Disclaimers
+### Aviso: Logs Desativados
+**Texto:** Os logs estão desativados. Se encontrar problemas, ative temporariamente para nos ajudar a melhorar o app.
 
-### Aviso de Responsabilidade
-```
-⚠️ IMPORTANTE: Este aplicativo é uma ferramenta informativa. Use por sua própria conta e risco. Recomendamos não usar para decisões automatizadas. Sempre verifique as informações manualmente antes de aceitar corridas.
-```
+---
 
-### Aviso de Não-Automação
-```
-🚫 NUNCA AUTOMATIZA: Este app apenas lê e calcula. Nunca aceita, recusa ou interage com corridas automaticamente. Todas as decisões são suas.
-```
+## Textos de Configurações
 
-### Aviso de Privacidade
+### Seção: Aparência
+- **Tema:** Claro / Escuro / Automático
+- **Tamanho do Overlay:** Pequeno / Médio / Grande
+- **Posição do Overlay:** Superior Esquerdo / Superior Direito / Inferior Esquerdo / Inferior Direito
+
+### Seção: Detecção
+- **Sensibilidade de Detecção:** Baixa / Média / Alta
+- **OCR Fallback:** Ativado / Desativado
+- **Modo Conservador:** Ativado / Desativado
+
+### Seção: Thresholds
+- **Verde (R$/km ≥ ):** [campo numérico]
+- **Laranja (R$/km ≥ ):** [campo numérico]
+- **Vermelho (R$/km < ):** [campo numérico]
+
+### Seção: Privacidade
+- **Analytics:** Ativado / Desativado
+- **Crash Reporting:** Ativado / Desativado
+- **Logs Locais:** Ativado / Desativado
+- **Apagar Todos os Dados:** [botão vermelho]
+
+### Seção: Sobre
+- **Versão:** 1.0.0
+- **Política de Privacidade:** [link]
+- **Código Fonte:** [link]
+- **Reportar Problema:** [link]
+
+---
+
+## Textos de Overlay
+
+### Overlay Básico
 ```
-🔒 PRIVACIDADE: Nenhum dado pessoal é coletado. Todo processamento é feito no seu dispositivo. Código fonte disponível para auditoria.
+R$/km: R$ 2,50
+R$/min: R$ 0,60
 ```
 
-## 🎯 Textos de Estados de Permissão
-
-### Permissão Concedida
+### Overlay Expandido (ao tocar)
 ```
-✅ Ativada
-```
-
-### Permissão Pendente
-```
-⏳ Aguardando ativação
+R$/km: R$ 2,50  🟢 Excelente
+R$/min: R$ 0,60
+Distância: 15,2 km
+Valor Total: R$ 38,00
+Tempo Estimado: 25 min
 ```
 
-### Permissão Negada
+### Overlay com Baixa Confiança
 ```
-❌ Não ativada
-```
-
-## 📖 Textos de Ajuda Contextual
-
-### Como Ativar Acessibilidade
-```
-1. Toque em "Ativar Acessibilidade"
-2. Você será levado às Configurações do Android
-3. Procure por "Assistente R$/km" na lista
-4. Toque no nome do app
-5. Ative o interruptor
-6. Confirme tocando em "OK"
-7. Volte ao aplicativo
-```
-
-### Como Ativar Overlay
-```
-1. Toque em "Ativar Overlay"
-2. Você será levado às Configurações do Android
-3. Procure por "Assistente R$/km" na lista
-4. Ative o interruptor "Permitir sobreposição"
-5. Volte ao aplicativo
-```
-
-## 🔄 Textos de Status de Carregamento
-
-### Verificando Permissões
-```
-Verificando permissões...
-```
-
-### Configurando Serviços
-```
-Configurando serviços...
-```
-
-### Finalizando Setup
-```
-Finalizando configuração...
-```
-
-## 🎨 Textos de Indicadores Visuais
-
-### Indicador Verde
-```
-Preço Bom (≥ R$ 1,50/km)
-```
-
-### Indicador Laranja
-```
-Preço Neutro (R$ 0,80 - R$ 1,49/km)
-```
-
-### Indicador Vermelho
-```
-Preço Baixo (< R$ 0,80/km)
-```
-
-## 📱 Textos Específicos por Versão do Android
-
-### Android 6.0-7.1
-```
-Para ativar, vá em: Configurações > Segurança > Origens desconhecidas
-```
-
-### Android 8.0+
-```
-Para ativar, vá em: Configurações > Apps > Acesso especial > Instalar apps desconhecidos
-```
-
-## 🌐 Textos de Suporte
-
-### Precisa de Ajuda?
-```
-Precisa de ajuda? Visite nossa documentação ou abra uma issue no GitHub.
-```
-
-### Link para Documentação
-```
-📖 Ver Documentação
-```
-
-### Link para Suporte
-```
-🆘 Obter Suporte
+R$/km: R$ 1,80  ❓ Baixa confiança
+Verifique os valores
 ```
 
 ---
 
-## 📋 Checklist de Implementação
+## Textos de Notificações
 
-### Textos Implementados
-- [x] Tela de boas-vindas
-- [x] Tela de privacidade  
-- [x] Tela de permissões
-- [x] Tela de conclusão
-- [x] Botões de navegação
-- [x] Avisos e disclaimers
-- [x] Estados de permissão
-- [x] Textos de ajuda
-- [x] Indicadores de status
-- [x] Textos de suporte
+### Notificação de Primeira Inicialização
+**Título:** KM County Ativado
+**Texto:** Toque para configurar permissões necessárias
 
-### Localização
-- [x] Português brasileiro (pt-BR)
-- [ ] Inglês (en) - Para futuras versões
-- [ ] Espanhol (es) - Para futuras versões
+### Notificação de Atualização Disponível
+**Título:** Nova Versão Disponível
+**Texto:** Atualização de detecção de corridas disponível
 
-### Acessibilidade
-- [x] Textos claros e concisos
-- [x] Linguagem simples
-- [x] Instruções passo-a-passo
-- [x] Avisos importantes destacados
-- [x] Descrições de funcionalidades
-
-**Todos os textos estão implementados no arquivo `app/src/main/res/values/strings.xml` com referências correspondentes no código Kotlin/Compose.**
+### Notificação de Problema Detectado
+**Título:** Problema de Detecção
+**Texto:** Algumas corridas podem não estar sendo detectadas. Verifique as configurações.
